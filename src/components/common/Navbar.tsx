@@ -1,12 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { businessesData } from "../../data/businessesData";
 import { associationData } from "../../data/associationData";
+
+const useScrollDirection = () => {
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+
+  useEffect(() => {
+    const updateScrollDirection = () => {
+      const scrollY = window.scrollY;
+      setScrolledToTop(scrollY <= 10);
+      
+      const direction = scrollY > lastScrollY ? 'down' : 'up';
+      if (direction !== scrollDirection && (Math.abs(scrollY - lastScrollY) > 5)) {
+        setScrollDirection(direction);
+      }
+      setLastScrollY(scrollY >= 0 ? scrollY : 0);
+    };
+
+    window.addEventListener('scroll', updateScrollDirection);
+    return () => window.removeEventListener('scroll', updateScrollDirection);
+  }, [lastScrollY, scrollDirection]);
+
+  return { scrollDirection, scrolledToTop };
+};
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { businessId } = useParams<{ businessId?: string }>();
+  const { scrollDirection, scrolledToTop } = useScrollDirection();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
@@ -22,8 +47,14 @@ const Navbar: React.FC = () => {
 
   const urlPrefix = businessId ? `/empresas/${businessId}` : "";
 
+  const navbarVisible = scrollDirection === 'up' || scrolledToTop;
+
   return (
-    <nav className="bg-white shadow-md z-50 w-full">
+    <nav
+      className={`bg-white shadow-md z-50 w-full fixed transition-transform duration-300 ${
+        navbarVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
@@ -55,6 +86,25 @@ const Navbar: React.FC = () => {
             >
               Quiénes Somos
             </Link>
+
+            {businessId && (
+              <Link
+                to={`${urlPrefix}/galeria`}
+                className="text-neutral-dark hover:text-primary px-3 py-2 rounded-md font-medium"
+              >
+                Galería
+              </Link>
+            )}
+
+            {businessId && (
+              <Link
+                to={`${urlPrefix}/productos`}
+                className="text-neutral-dark hover:text-primary px-3 py-2 rounded-md font-medium"
+              >
+                Productos
+              </Link>
+            )}
+
             {!businessId && (
               <Link
                 to="/galeria"
@@ -180,7 +230,25 @@ const Navbar: React.FC = () => {
           >
             Quiénes Somos
           </Link>
-          {!businessId && (
+
+          {businessId ? (
+            <>
+              <Link
+                to={`${urlPrefix}/galeria`}
+                className="block text-neutral-dark hover:text-primary px-3 py-2 rounded-md font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Galería
+              </Link>
+              <Link
+                to={`${urlPrefix}/productos`}
+                className="block text-neutral-dark hover:text-primary px-3 py-2 rounded-md font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Productos
+              </Link>
+            </>
+          ) : (
             <Link
               to="/galeria"
               className="block text-neutral-dark hover:text-primary px-3 py-2 rounded-md font-medium"
@@ -189,6 +257,7 @@ const Navbar: React.FC = () => {
               Galería
             </Link>
           )}
+
           <div>
             <div className="block px-3 py-2 font-medium text-neutral-dark">
               Empresas:

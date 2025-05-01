@@ -37,11 +37,11 @@ const Home: React.FC = () => {
       </section>
 
       <section className="py-16 bg-muted">
-        <div className="container">
+        <div className="container mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-12">
             Nuestras Empresas
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center">
             {businessesData.map((business) => (
               <Card key={business.id} className="transition hover:scale-105">
                 <img
@@ -63,6 +63,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
 
       <section className="bg-primary text-white">
         <div className="container max-w-2xl mx-auto flex flex-col items-center justify-center text-center min-h-[40vh] py-16">

@@ -3,7 +3,6 @@ export enum BusinessType {
     MILK = 'Lácteos',
     TRAILS = 'Senderos',
     SODA = 'Soda',
-    MUSHROOMS = 'Hongos',
   }
   
   export interface Product {
@@ -36,7 +35,10 @@ export enum BusinessType {
     longDescription: string;
     type: BusinessType;
     products: Product[];
-    images: string[];
+    images: Array<{
+      url: string;
+      name: string; // Añade esta propiedad
+    }>;
     contactInfo: ContactInfo;
     socialMedia: SocialMedia;
   }

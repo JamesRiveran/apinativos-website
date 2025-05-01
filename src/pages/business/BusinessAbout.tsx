@@ -24,7 +24,7 @@ const BusinessAboutUs: React.FC = () => {
       <Hero
         title={`Sobre ${business.name}`}
         subtitle="Nuestra historia y valores"
-        backgroundImage={business.images[1] || business.images[0] || '/assets/images/placeholder.jpg'}
+        backgroundImage={business.images[1]?.url || business.images[0]?.url || '/assets/images/placeholder.jpg'}
         height="medium"
       />
 

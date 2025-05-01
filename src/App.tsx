@@ -6,8 +6,8 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import BusinessHome from './pages/business/BusinessHome';
 import BusinessAboutUs from './pages/business/BusinessAbout';
-import BusinessProducts from './pages/business/BusinessProducts';
-
+import BusinessGallery from './pages/business/BusinessGallery';
+import BusinessProductsCatalog from './pages/business/BusinessProductsCatalog';
 const App: React.FC = () => {
   return (
     <Router>
@@ -19,7 +19,8 @@ const App: React.FC = () => {
 
           <Route path="/empresas/:businessId" element={<BusinessHome />} />
           <Route path="/empresas/:businessId/quienes-somos" element={<BusinessAboutUs />} />
-          <Route path="/empresas/:businessId/productos" element={<BusinessProducts />} />
+          <Route path="/empresas/:businessId/productos" element={<BusinessProductsCatalog />} />
+          <Route path="/empresas/:businessId/galeria" element={<BusinessGallery />} />
           <Route path="/empresas/:businessId/contacto" element={<Contact />} />
         </Routes>
     </Router>

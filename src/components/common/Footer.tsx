@@ -93,13 +93,21 @@ const Footer: React.FC = () => {
                   Quiénes Somos
                 </Link>
               </li>
-              {!businessId && (
+              
+              {businessId ? (
+                <li>
+                  <Link to={`${urlPrefix}/galeria`} className="hover:text-accent">
+                    Galería
+                  </Link>
+                </li>
+              ) : (
                 <li>
                   <Link to="/galeria" className="hover:text-accent">
                     Galería
                   </Link>
                 </li>
               )}
+              
               <li>
                 <Link
                   to={`${urlPrefix}/contacto`}
@@ -227,7 +235,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-8 border-t border-white pt-6">
           <p className="text-center text-sm">
-            &copy; {new Date().getFullYear()} {name}. Todos los derechos reservados. Sitio desarrollado por James Rivera.
+            &copy; {new Date().getFullYear()} {name}. Todos los derechos reservados.
           </p>
         </div>
       </div>

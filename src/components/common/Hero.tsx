@@ -15,7 +15,6 @@ const Hero: React.FC<HeroProps> = ({
   height = "medium",
   overlay = true,
 }) => {
-
   const heightClass = {
     small: "h-64",
     medium: "h-96",
