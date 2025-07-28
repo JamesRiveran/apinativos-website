@@ -3,6 +3,8 @@ export enum BusinessType {
     MILK = 'Lácteos',
     TRAILS = 'Senderos',
     SODA = 'Soda',
+    COFFE = 'Cafe',
+    TOUR = 'Tour',
   }
   
   export interface Product {
@@ -35,6 +37,15 @@ export enum BusinessType {
     longDescription: string;
     type: BusinessType;
     products: Product[];
+    tours?: Tour[];
+    soda?: {
+      description: string;
+      image?: string;
+    };
+    artesanias?: {
+      description: string;
+      status?: string;
+    };
     images: Array<{
       url: string;
       name: string; // Añade esta propiedad
@@ -43,6 +54,16 @@ export enum BusinessType {
     socialMedia: SocialMedia;
   }
   
+  export interface Tour {
+    id: string;
+    name: string;
+    description: string;
+    duration?: string;
+    price: string;
+    image: string;
+    status?: string;
+  }
+
   export interface Association {
     name: string;
     logo: string;
