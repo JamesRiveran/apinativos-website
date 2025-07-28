@@ -5,20 +5,20 @@ import placeholder from "../assets/images/placeholder.jpg";
 export const associationData: Association = {
   name: "APINATIVOS",
   logo: logo,
-  slogan: "Asociación de Productores Prestadores de servicios y turismo del pacífico sur alto",
-  description: "Somos una asociación que agrupa a diversos productores locales comprometidos con la calidad, la sostenibilidad y el desarrollo de nuestra comunidad.",
-  history: "Fundada en 2010, nuestra asociación nació de la necesidad de fortalecer las capacidades productivas de pequeños empresarios de la región. A lo largo de más de una década, hemos crecido hasta convertirnos en un referente de colaboración y excelencia en la producción local.",
-  mission: "Potenciar el desarrollo sostenible de nuestros asociados mediante la capacitación, la innovación y la comercialización justa de sus productos, promoviendo el bienestar social y ambiental de nuestra comunidad.",
-  vision: "Ser reconocidos como un modelo de asociatividad exitosa que transforma positivamente la economía local, preservando nuestras tradiciones productivas y adaptándolas a las exigencias del mercado actual.",
+  slogan: "Asociación de Productores Prestadores de Servicios y Turismo del Pacífico Sur",
+  description: "La Asociación APINATIVOS (Asociación de Productores Prestadores de Servicios y Turismo del Pacífico Sur) es una organización comunitaria ubicada en Coto Brus, Puntarenas, Costa Rica, que promueve el desarrollo sostenible a través del fortalecimiento de iniciativas locales en turismo rural, producción agroecológica y conservación ambiental. Integrada por productores, emprendedores y prestadores de servicios turísticos. APINATIVOS trabaja en la promoción de la cultura local, el empoderamiento de las comunidades y la protección del patrimonio natural del Pacífico Sur costarricense. Su labor fomenta la economía solidaria y la articulación de redes colaborativas para mejorar la calidad de vida de sus miembros y visitantes.",
+  history: "Don Gilbert, ebanista de profesión, conoció al apicultor Carlos Azofeifa, quien le pidió fabricar cajas para sus colmenas. De ahí nació su pasión por la apicultura, lo que llevó a la creación de la cooperativa Coopeapi. Aunque esta se disolvió tras cinco años, algunos miembros se reagruparon con apoyo de la Universidad de Costa Rica y el Tour de las Abejas. En agosto de 2023 nació oficialmente la marca APINATIVOS, consolidando su compromiso con el desarrollo sostenible.",
+  mission: "",
+  vision: "",
   contactInfo: {
-    email: "info@asociacionproductores.com",
-    phone: "+506 2222-3333",
-    address: "100m este de la Iglesia Central, San José, Costa Rica"
+    email: "",
+    phone: "",
+    address: "50 metros este de Agroservicio La Poderosa y 50 metros sur, Coto Brus, Puntarenas, Costa Rica"
   },
   socialMedia: {
     facebook: "https://www.facebook.com/apinativos",
-    instagram: "https://instagram.com/asoc_productores",
-    whatsapp: "+506 8888-9999"
+    instagram: "",
+    whatsapp: ""
   },
   galleryImages: [
     placeholder,
