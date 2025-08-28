@@ -1,11 +1,10 @@
 import { Business, BusinessType } from "../types";
-import logo from '../assets/images/Quesos/logo.jpg';
-import miel from '../assets/images/Quesos/miel.jpg';
-import soda from '../assets/images/Quesos/soda.jpg';
-import finca from '../assets/images/Quesos/finca.jpg';
-import queso from '../assets/images/Quesos/quesos.jpg';
+import logo from '../assets/images/finca-ecologica-don-juan/logo.jpg';
 import placeholder from '../assets/images/placeholder.jpg';
-
+import logoApiZaid from '../assets/images/api-zaid/api-zaid-logo.jpg';
+import logoCafeLaMarcela from '../assets/images/cafe-la-marcela/cafe_la_marcela_logo.png';
+import logoFincaZamora from '../assets/images/finca-zamoraFallas/logo.jpg';
+import logoApiG from '../assets/images/api-g/logo.jpg';
 export const businessesData: Business[] = [
   {
     id: "lacteos-don-juan",
@@ -78,7 +77,7 @@ export const businessesData: Business[] = [
         name: "Miel Artesanal",
         description:
           "Miel pura producida en la finca y por productores aliados. Presentaciones: 1L ₡6.000, 750g ₡5.000, 500g ₡3.750, 250g ₡1.600, 100g ₡3.000.",
-        image: miel,
+  image: require("../assets/images/finca-ecologica-don-juan/logo.jpg"),
         price: "Desde ₡1.600"
       }
     ],
@@ -128,7 +127,7 @@ export const businessesData: Business[] = [
     soda: {
       description:
         "La alimentación se ofrece durante los tours, pero no está incluida en el precio. Desayunos entre ₡2.000 y ₡2.500, almuerzos tipo casado entre ₡3.000 y ₡3.500. Se utiliza queso, natilla y ocasionalmente carne de cerdo producida en la finca.",
-      image: soda
+  image: require("../assets/images/finca-ecologica-don-juan/logo.jpg")
     },
     artesanias: {
       description: "Próximamente contaremos con una sección de artesanías en colaboración con ApiNativos.",
@@ -136,20 +135,36 @@ export const businessesData: Business[] = [
     },
     images: [
       {
-        url: finca,
-        name: "Finca Ecológica Don Juan"
+        url: require("../assets/images/finca-ecologica-don-juan/bosque.JPG"),
+        name: "Bosque"
       },
       {
-        url: miel,
-        name: "Api G"
+        url: require("../assets/images/finca-ecologica-don-juan/dueño.JPG"),
+        name: "Dueño de la finca"
       },
       {
-        url: soda,
+        url: require("../assets/images/finca-ecologica-don-juan/entrada_sendero.JPG"),
+        name: "Entrada al sendero"
+      },
+      {
+        url: require("../assets/images/finca-ecologica-don-juan/entrevista.JPG"),
+        name: "Entrevistas"
+      },
+      {
+        url: require("../assets/images/finca-ecologica-don-juan/sendero.JPG"),
+        name: "Sendero ecológico"
+      },
+      {
+        url: require("../assets/images/finca-ecologica-don-juan/soda_entrada.jpg"),
+        name: "Entrada de la soda"
+      },
+      {
+        url: require("../assets/images/finca-ecologica-don-juan/soda.JPG"),
         name: "Soda Don Juan"
       },
       {
-        url: queso,
-        name: "Quesos Don Juan"
+        url: require("../assets/images/finca-ecologica-don-juan/zonasRecreacion.JPG"),
+        name: "Zonas de recreación"
       }
     ],
     contactInfo: {
@@ -163,46 +178,57 @@ export const businessesData: Business[] = [
     }
   },
   {
-    id: "api-zaid-cafe-marcela",
+    id: "cafe-la-marcela",
     name: "Café La Marcela",
-    logo: placeholder,
+    logo: logoCafeLaMarcela,
+    backgroundImage: logoCafeLaMarcela,
     shortDescription:
-      "Api-Zaid y Café La Marcela es una empresa ubicada en Las Mellizas de Sabalito, Coto Brus, que se dedica a la producción y comercialización de miel en diferentes presentaciones y de café de varios tipos, adaptándose a los diversos gustos.",
+      "Café La Marcela es una empresa ubicada en Las Mellizas de Sabalito, Coto Brus, dedicada a la producción y comercialización de café de excelencia, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
     longDescription:
-      "Api-Zaid y Café La Marcela es un emprendimiento familiar ubicado en Las Mellizas de Sabalito, Coto Brus, dedicado a la producción y comercialización de miel artesanal y café de alta calidad. Inspirada por el legado de su familia cafetalera, doña Mileidy decidió emprender y ampliar la producción, encargándose también del tueste y empaque del café. El proyecto de miel nació con la apicultura de abejas mariolas, una especie sin aguijón, y se ha convertido en una muestra de dedicación, innovación y respeto por la naturaleza. Hoy, ofrecen productos que reflejan tradición, excelencia y esfuerzo constante.",
-    type: BusinessType.HONEY,
+      "Inspirada por el legado de su familia cafetalera, doña Mileidy decidió emprender y ampliar la producción, encargándose también del tueste y empaque del café. Café La Marcela ofrece productos que reflejan tradición, excelencia y esfuerzo constante.",
+    type: BusinessType.COFFE,
     products: [
       {
-        id: "cafe-varios-tipos",
-        name: "Café de varios tipos",
-        description: "Café de excelencia que ha ganado premios, cultivado y procesado artesanalmente con métodos tradicionales familiares. Disponible en diferentes tipos para adaptarse a diversos gustos.",
-        image: placeholder,
-        price: "Consultar precio"
+        id: "cafe-altura",
+        name: "Café 250g",
+        description: "Café de excelencia que ha ganado premios de primer lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
+        image: require("../assets/images/cafe-la-marcela/products/cafe.jpg"),
+        price: "₡3.500"
       },
       {
-        id: "miel-diversas-presentaciones",
-        name: "Miel en diversas presentaciones",
-        description: "Miel artesanal de primer nivel producida por abejas mariolas (sin aguijón). Disponible en diferentes presentaciones para satisfacer las necesidades del cliente.",
-        image: placeholder,
-        price: "Consultar precio"
-      }
+        id: "cafe-altura",
+        name: "Café 250g",
+        description: "Café de excelencia que ha ganado premios de segundo lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
+        image: require("../assets/images/cafe-la-marcela/products/blanco.jpg"),
+        price: "₡3.500"
+      },
+      {
+        id: "cafe-altura",
+        name: "Café 250g",
+        description: "Café de excelencia procesado artesanalmente con métodos tradicionales familiares.",
+        image: require("../assets/images/cafe-la-marcela/products/negro.jpg"),
+        price: "₡3.500"
+      },
+      {
+        id: "cafe-altura",
+        name: "Café 160g",
+        description: "Café de excelencia que ha ganado premios, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
+        image: require("../assets/images/cafe-la-marcela/products/negro_160.jpg"),
+        price: "₡2.000"
+      },
+      {
+        id: "cafe-altura",
+        name: "Café 250g",
+        description: "Café de excelencia procesado artesanalmente con métodos tradicionales familiares, a un precio más accesible para todas las familias.",
+        image: require("../assets/images/cafe-la-marcela/products/plateado.jpg"),
+        price: "₡2.000"
+      },
+
     ],
     images: [
       {
-        url: placeholder,
-        name: "Api-Zaid y Café La Marcela"
-      },
-      {
-        url: placeholder,
-        name: "Café artesanal"
-      },
-      {
-        url: placeholder,
-        name: "Miel de mariolas"
-      },
-      {
-        url: placeholder,
-        name: "Proceso de producción"
+        url: require("../assets/images/cafe-la-marcela/premio.JPG"),
+        name: "Primer Lugar de Feria de Café Zona Alta de Sabalito"
       }
     ],
     contactInfo: {
@@ -211,13 +237,75 @@ export const businessesData: Business[] = [
       address: "Las Mellizas de Sabalito, Coto Brus"
     },
     socialMedia: {
-      facebook: ""
+      facebook: "https://www.facebook.com/people/Api-zaid/61561354187176/?mibextid=wwXIfr&rdid=Lwc6R7K6Sac0N9XP&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BnaxiykH1%2F%3Fmibextid%3DwwXIfr"
+    }
+  },
+  {
+    id: "api-zaid",
+    name: "Api-Zaid",
+    logo: logoApiZaid,
+    backgroundImage: logoApiZaid,
+    shortDescription:
+      "Api-Zaid es un emprendimiento familiar ubicado en Las Mellizas de Sabalito, Coto Brus, dedicado a la producción y comercialización de miel artesanal de primer nivel producida por abejas mariolas (sin aguijón).",
+    longDescription:
+      "El proyecto de miel nació con la apicultura de abejas mariolas, una especie sin aguijón, y se ha convertido en una muestra de dedicación, innovación y respeto por la naturaleza. Api-Zaid ofrece miel en diferentes presentaciones para satisfacer las necesidades del cliente.",
+    type: BusinessType.HONEY,
+    products: [
+      {
+        id: "miel-700g",
+        name: "Miel 700g",
+        description: "Miel artesanal, producida artesanalmente con métodos tradicionales.",
+        image: require("../assets/images/api-zaid/products/700g_miel.jpg"),
+        price: "₡5.000"
+      },
+      {
+        id: "miel-panal",
+        name: "Miel con panal",
+        description: "Miel artesanal, producida artesanalmente con métodos tradicionales. Dentro contiene panal natural",
+        image: [
+          require("../assets/images/api-zaid/products/miel_panal.jpg")
+        ],
+        price: "₡5.800"
+      },
+      {
+        id: "miel-1000g-botella",
+        name: "Miel 1000g en botella",
+        description: "Miel artesanal, producida artesanalmente con métodos tradicionales.",
+        image: require("../assets/images/api-zaid/products/botella_1000g.jpg"),
+        price: "₡5.000"
+      },
+      {
+        id: "miel-215g-botella",
+        name: "Miel 215g en botella",
+        description: "Miel artesanal, producida artesanalmente con métodos tradicionales.",
+        image: require("../assets/images/api-zaid/products/botella_215g.jpg"),
+        price: "₡2.000"
+      },
+    ],
+    images: [
+      {
+        url: require("../assets/images/api-zaid/entrevistas.JPG"),
+        name: "Entrevistas"
+      },
+      {
+        url: require("../assets/images/api-zaid/miel_general.JPG"),
+        name: "Produtos de miel en general"
+      }
+    ],
+    contactInfo: {
+      email: "mileidyalfaro311@gmail.com",
+      phone: "+506 8635-7243",
+      address: "Las Mellizas de Sabalito, Coto Brus"
+    },
+    socialMedia: {
+      facebook: "https://www.facebook.com/people/Api-zaid/61561354187176/?mibextid=wwXIfr&rdid=Lwc6R7K6Sac0N9XP&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BnaxiykH1%2F%3Fmibextid%3DwwXIfr"
     }
   },
   {
     id: "api-g-apiarios-gil",
     name: "Api G",
-    logo: placeholder,
+    logo: logoApiG,
+    backgroundImage: logoApiG,
     shortDescription:
       "Api G es una empresa ubicada en La lucha de Sabalito en Puntarenas, Costa Rica, que se dedica a la producción y venta de productos a base de miel y la miel misma, además de ofrecer el servicio de tours y charlas sobre las abejas.",
     longDescription:
@@ -356,20 +444,56 @@ export const businessesData: Business[] = [
     ],
     images: [
       {
-        url: placeholder,
-        name: "Api G Apiarios"
+        url: require("../assets/images/api-g/apertura_colmena.JPG"),
+        name: "Apertura de colmena"
       },
       {
-        url: placeholder,
-        name: "Colmenas"
+        url: require("../assets/images/api-g/api.JPG"),
+        name: "Apiario"
       },
       {
-        url: placeholder,
-        name: "Miel cruda"
+        url: require("../assets/images/api-g/colmenas.JPG"),
+        name: "Colmena"
       },
       {
-        url: placeholder,
-        name: "Tours apícolas"
+        url: require("../assets/images/api-g/entrevistas.JPG"),
+        name: "Entrevistas"
+      },
+      {
+        url: require("../assets/images/api-g/interior_colmera.JPG"),
+        name: "Interior de colmena"
+      },
+      {
+        url: require("../assets/images/api-g/miel_comena.JPG"),
+        name: "Miel Cruda con Panal"
+      },
+      {
+        url: require("../assets/images/api-g/ponel.JPG"),
+        name: "Ponel"
+      },
+      {
+        url: require("../assets/images/api-g/productos_general.JPG"),
+        name: "Productos generales"
+      },
+      {
+        url: require("../assets/images/api-g/sendero_api.JPG"),
+        name: "Sendero apícola"
+      },
+      {
+        url: require("../assets/images/api-g/sendero_entrada.JPG"),
+        name: "Entrada al sendero"
+      },
+      {
+        url: require("../assets/images/api-g/sendero.JPG"),
+        name: "Sendero"
+      },
+      {
+        url: require("../assets/images/api-g/tour__explicacion.JPG"),
+        name: "Tour explicado"
+      },
+      {
+        url: require("../assets/images/api-g/visita_api.JPG"),
+        name: "Visita al apiario"
       }
     ],
     contactInfo: {
@@ -384,7 +508,8 @@ export const businessesData: Business[] = [
   {
     id: "finca-zamora-fallas",
     name: "Finca Zamora y Fallas",
-    logo: placeholder,
+    logo: logoFincaZamora,
+    backgroundImage: logoFincaZamora,
     shortDescription:
       "Finca cafetalera familiar con más de 60 años de tradición, ubicada en San Miguel de Sabalito a 1090 msnm. Café Abuelo Víctor representa la herencia de don Víctor Zamora Fonseca, uno de los forjadores de la región, dedicada al cultivo sostenible de café de altura con certificaciones ambientales.",
     longDescription:
@@ -411,21 +536,37 @@ export const businessesData: Business[] = [
     ],
     images: [
       {
-        url: placeholder,
-        name: "Finca Zamora y Fallas"
+        url: require("../assets/images/finca-zamoraFallas/finca.JPG"),
+        name: "Finca Certificada"
       },
       {
-        url: placeholder,
+        url: require("../assets/images/finca-zamoraFallas/cafetal.JPG"),
         name: "Plantación de café"
       },
       {
-        url: placeholder,
-        name: "Café Abuelo Víctor"
+        url: require("../assets/images/finca-zamoraFallas/duenos.JPG"),
+        name: "Dueños de la finca"
       },
       {
-        url: placeholder,
-        name: "Vista de la finca"
-      }
+        url: require("../assets/images/finca-zamoraFallas/sendero.JPG"),
+        name: "Sendero principal"
+      },
+      {
+        url: require("../assets/images/finca-zamoraFallas/senderoLaMontana.JPG"),
+        name: "Sendero La Montaña"
+      },
+      {
+        url: require("../assets/images/finca-zamoraFallas/cafe_floreado.jpg"),
+        name: "Mata de café floreado"
+      },
+      {
+        url: require("../assets/images/finca-zamoraFallas/mata_cafe.jpg"),
+        name: "Mata de café en temporada de cosecha"
+      },
+      {
+        url: require("../assets/images/finca-zamoraFallas/recolecta.jpg"),
+        name: "Recolecta de café en temporada"
+      },
     ],
     contactInfo: {
       email: "fincazamorayfallas@gmail.com",
@@ -491,21 +632,13 @@ export const businessesData: Business[] = [
     ],
     images: [
       {
-        url: placeholder,
-        name: "Mieles Santa Lucía"
+        url: require("../assets/images/mieles-santa-lucia/colmena.JPG"),
+        name: "Colmena de abejas"
       },
       {
-        url: placeholder,
-        name: "Colmenas de diferentes especies"
+        url: require("../assets/images/mieles-santa-lucia/panal.JPG"),
+        name: "Panal de abejas"
       },
-      {
-        url: placeholder,
-        name: "Productos apícolas"
-      },
-      {
-        url: placeholder,
-        name: "Proceso de producción"
-      }
     ],
     contactInfo: {
       email: "merardocrack2512@gmail.com",
@@ -514,6 +647,123 @@ export const businessesData: Business[] = [
     },
     socialMedia: {
       facebook: ""
+    }
+  },
+  {
+    id: "pasteleria-reposteria-jessy",
+    name: "Repostería Jessy",
+    logo: placeholder,
+    shortDescription:
+      "Pastelería y Repostería Jessy nació del amor por crear postres únicos. Comenzó vendiendo esporádicamente a los vecinos, motivada por su pareja a emprender con la famosa torta chilena que fue todo un éxito. Hoy cuenta con 25 tipos de postres diferentes.",
+    longDescription:
+      "Pastelería y Repostería Jessy es un emprendimiento que surgió de la pasión por la repostería y el apoyo familiar. Todo comenzó cuando Jessica vendía esporádicamente postres a los vecinos de su comunidad, hasta que su pareja la motivó a formalizar su talento culinario. Su primer gran éxito fue la torta chilena, que marcó el inicio de un crecimiento constante. Los primeros días fueron desafiantes, especialmente encontrar el punto exacto para satisfacer el gusto de todos los clientes, pero con dedicación y amor por lo que hace, logró perfeccionar sus recetas. Actualmente ofrece 25 tipos de postres diferentes, incluyendo especialidades como carlota, tres leches, torta fría y torta Churchill. Su filosofía se resume en su lema: 'Dulce con amor', reflejando el cariño que pone en cada creación.",
+    type: BusinessType.BAKERY,
+    products: [
+      {
+        id: "torta-chilena",
+        name: "Torta Chilena",
+        description: "La especialidad de la casa que marcó el inicio del emprendimiento. Un clásico que conquistó a los primeros clientes.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "carlota",
+        name: "Carlota",
+        description: "Deliciosa carlota preparada con ingredientes frescos y la receta tradicional.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "tres-leches",
+        name: "Tres Leches",
+        description: "Clásico pastel tres leches, suave y cremoso, perfecto para cualquier ocasión.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "torta-fria",
+        name: "Torta Fría",
+        description: "Refrescante torta fría, ideal para días calurosos y celebraciones especiales.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "torta-churchill",
+        name: "Torta Churchill",
+        description: "Torta Churchill con todos los sabores tradicionales costarricenses.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "pasteles-eventos",
+        name: "Pasteles para Eventos",
+        description: "Pasteles personalizados para bodas, cumpleaños y eventos especiales. Diseños únicos hechos con amor.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "bocadillos-dulces",
+        name: "Bocadillos Dulces",
+        description: "Variedad de bocadillos dulces perfectos para acompañar el café o como merienda.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "bocadillos-salados",
+        name: "Bocadillos Salados",
+        description: "Bocadillos salados ideales para eventos, reuniones o como aperitivos.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "queques-enteros",
+        name: "Queques Enteros",
+        description: "Queques completos en diferentes sabores, perfectos para compartir en familia.",
+        image: placeholder,
+        price: "Consultar precio"
+      },
+      {
+        id: "queques-individuales",
+        name: "Queques Individuales",
+        description: "Porciones individuales de queque, ideales para meriendas o regalos personales.",
+        image: placeholder,
+        price: "Consultar precio"
+      }
+    ],
+    images: [
+      {
+        url: require("../assets/images/reposteria-jessy/entrevistas.JPG"),
+        name: "Entrevistas"
+      },
+      {
+        url: require("../assets/images/reposteria-jessy/general.JPG"),
+        name: "Pedidos bajo encargo"
+      },
+      {
+        url: require("../assets/images/reposteria-jessy/postre.JPG"),
+        name: "Tres Leches"
+      },
+      {
+        url: require("../assets/images/reposteria-jessy/productos_general.JPG"),
+        name: "Postres Secos"
+      },
+      {
+        url: require("../assets/images/reposteria-jessy/tortaChilena.JPG"),
+        name: "Torta Chilena"
+      },
+      {
+        url: require("../assets/images/reposteria-jessy/tres_leches.JPG"),
+        name: "Entregas a domicilio"
+      }
+    ],
+    contactInfo: {
+      email: "jessicayoselim@gmail.com",
+      phone: "+506 8794-4995",
+      address: "50 metros este de Agroservicio La Poderosa y 50 metros sur, La Lucha de Sabalito, Puntarenas", 
+    },
+    socialMedia: {
+      facebook: "",
+      whatsapp: "+506 8794-4995"
     }
   }
 ];

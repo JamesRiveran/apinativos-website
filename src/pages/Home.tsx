@@ -51,7 +51,7 @@ const Home: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button asChild>
+                <Button asChild className="text-white">
                   <Link to="/quienes-somos">Conozca más sobre nosotros</Link>
                 </Button>
               </motion.div>

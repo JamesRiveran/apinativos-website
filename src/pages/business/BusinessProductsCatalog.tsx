@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../../components/ui/Modal';
 import { useParams, Link } from 'react-router-dom';
 import BusinessLayout from '../../layouts/BusinessLayout';
 import Hero from '../../components/common/Hero';
 import { getBusinessById } from '../../data/businessesData';
 import { Card, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
-import logo from '../../assets/images/Quesos/logo.jpg';
+import logo from '../../assets/images/finca-ecologica-don-juan/logo.jpg'; 
 import { FadeInUp, ScaleIn, StaggerContainer, StaggerItem } from '../../components/animations/AnimationComponents';
 import { GradientOrb } from '../../components/animations/BackgroundEffects';
 
 const BusinessProductsCatalog: React.FC = () => {
   const { businessId } = useParams<{ businessId: string }>();
   const business = getBusinessById(businessId || '');
+  // Modal state for product details
+  type ProductType = typeof business extends { products: Array<infer P> } ? P : any;
+  const [modalProduct, setModalProduct] = useState<null | ProductType>(null);
+
+  // Scroll to top on mount
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   if (!business) {
     return (
@@ -30,7 +39,7 @@ const BusinessProductsCatalog: React.FC = () => {
       <Hero 
         title={`Productos de ${business.name}`}
         subtitle="Calidad artesanal en cada detalle"
-        backgroundImage={logo}
+        backgroundImage={business.backgroundImage || logo}
         height="medium"
       />
 
@@ -51,39 +60,74 @@ const BusinessProductsCatalog: React.FC = () => {
           </FadeInUp>
 
           {business.products.length > 0 ? (
-            <StaggerContainer>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {business.products.map((product, index) => (
-                  <StaggerItem key={product.id}>
-                    <ScaleIn delay={0.2 + index * 0.05}>
-                      <Card className="group overflow-hidden border border-gray-200 hover:border-primary/30 transition-all hover:shadow-xl hover:-translate-y-2 duration-300">
-                        <div className="relative aspect-square overflow-hidden">
-                          <img
-                            src={product.image}
-                            alt={product.name}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                        </div>
-                        <CardContent className="p-6">
-                          <div className="space-y-3">
-                            <h3 className="text-xl font-bold text-gray-800 line-clamp-1">
-                              {product.name}
-                            </h3>
-                            <p className="text-lg font-bold text-primary">
-                              {product.price}
-                            </p>
-                            <p className="text-gray-600 line-clamp-2">
-                              {product.description}
-                            </p>
+            <>
+              <StaggerContainer>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                  {business.products.map((product, index) => (
+                    <StaggerItem key={product.id}>
+                      <ScaleIn delay={0.2 + index * 0.05}>
+                        <Card
+                          className="group overflow-hidden border border-gray-200 hover:border-primary/30 transition-all hover:shadow-xl hover:-translate-y-2 duration-300 cursor-pointer"
+                          onClick={() => setModalProduct(product)}
+                        >
+                          <div className="relative aspect-square overflow-hidden">
+                            <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
                           </div>
-                        </CardContent>
-                      </Card>
-                    </ScaleIn>
-                  </StaggerItem>
-                ))}
-              </div>
-            </StaggerContainer>
+                          <CardContent className="p-6">
+                            <div className="space-y-3">
+                              <h3 className="text-xl font-bold text-gray-800 line-clamp-1">
+                                {product.name}
+                              </h3>
+                              <p className="text-lg font-bold text-primary">
+                                {product.price}
+                              </p>
+                              <p className="text-gray-600 line-clamp-2">
+                                {product.description}
+                              </p>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </ScaleIn>
+                    </StaggerItem>
+                  ))}
+                </div>
+              </StaggerContainer>
+              {/* Modal de producto */}
+              <Modal isOpen={!!modalProduct} onClose={() => setModalProduct(null)}>
+                {modalProduct && (
+                  <div className="w-full max-w-xs mx-auto flex flex-col items-center bg-white rounded-2xl shadow-2xl p-6 border border-primary/20">
+                    <img
+                      src={
+                        Array.isArray(modalProduct.image)
+                          ? modalProduct.image[0]
+                          : typeof modalProduct.image === 'string'
+                            ? modalProduct.image
+                            : ''
+                      }
+                      alt={modalProduct.name}
+                      className="w-40 h-40 object-cover rounded-xl border-2 border-primary/20 bg-white shadow mb-4 mx-auto"
+                      onError={e => { (e.target as HTMLImageElement).src = '/logo.jpg'; }}
+                    />
+                    <h2 className="text-2xl font-bold text-primary mb-2 text-center">{modalProduct.name}</h2>
+                    <p className="text-gray-700 text-base mb-4 text-center leading-relaxed">{modalProduct.description}</p>
+                    <div className="text-3xl font-extrabold text-primary bg-primary/10 rounded-lg px-6 py-2 mb-4 shadow text-center animate-pulse">
+                      {modalProduct.price}
+                    </div>
+                    <button
+                      className="mt-2 px-6 py-2 rounded-lg border border-primary text-primary font-semibold bg-white hover:bg-primary hover:text-white transition-colors self-center shadow"
+                      onClick={() => setModalProduct(null)}
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                )}
+              </Modal>
+            </>
           ) : (
             <FadeInUp delay={0.3}>
               <div className="text-center py-12 bg-white rounded-lg border border-gray-200 shadow-lg">
