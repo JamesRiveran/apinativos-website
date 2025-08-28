@@ -5,6 +5,7 @@ export enum BusinessType {
     SODA = 'Soda',
     COFFE = 'Cafe',
     TOUR = 'Tour',
+    BAKERY = "Panadería"
   }
   
   export interface Product {
@@ -33,6 +34,7 @@ export enum BusinessType {
     id: string;
     name: string;
     logo: string;
+    backgroundImage?: string;
     shortDescription: string;
     longDescription: string;
     type: BusinessType;
