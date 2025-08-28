@@ -26,8 +26,11 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <div
-      className={`relative flex items-center justify-center ${heightClass} w-full bg-cover bg-center overflow-hidden`}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className={`relative flex items-center justify-center ${heightClass} w-full bg-contain bg-center bg-no-repeat overflow-hidden`}
+      style={{ 
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundColor: '#f3f4f6' // Fondo gris claro para el espacio vacío
+      }}
     >
       {/* Background Effects */}
       <FloatingParticles count={20} />
