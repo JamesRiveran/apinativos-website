@@ -169,7 +169,7 @@ export const businessesData: Business[] = [
     ],
     contactInfo: {
       email: "contacto@lacteosdonjuan.com",
-      phone: "+506 6000-1111",
+      phone: "+506 8810-6090",
       address: "Finca Don Juan, 1km norte de la plaza de deportes"
     },
     socialMedia: {
