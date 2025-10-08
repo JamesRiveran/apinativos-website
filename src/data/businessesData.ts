@@ -5,6 +5,14 @@ import logoApiZaid from '../assets/images/api-zaid/api-zaid-logo.jpg';
 import logoCafeLaMarcela from '../assets/images/cafe-la-marcela/cafe_la_marcela_logo.png';
 import logoFincaZamora from '../assets/images/finca-zamoraFallas/logo.jpg';
 import logoApiG from '../assets/images/api-g/logo.jpg';
+
+import videoApiZaid from '../assets/images/api-zaid/videos/api-zaid.mp4';
+import videoApiG from '../assets/images/api-g/videos/api-g.mp4';
+import videoApiG1 from '../assets/images/api-g/videos/apig1.mp4';
+import videoCafeLaMarcela from '../assets/images/cafe-la-marcela/videos/cafe-la-marcela.mp4';
+import videoFincaEcologicaDonJuan from '../assets/images/finca-ecologica-don-juan/videos/finca-ecologica-don-juan.mp4';
+import videoFincaZamoraFallas from '../assets/images/finca-zamoraFallas/videos/finca-zamoraFallas.mp4';
+import videoReposteriaJessy from '../assets/images/reposteria-jessy/videos/reposteria-jessy.mp4';
 export const businessesData: Business[] = [
   {
     id: "lacteos-don-juan",
@@ -133,6 +141,15 @@ export const businessesData: Business[] = [
       description: "Próximamente contaremos con una sección de artesanías en colaboración con ApiNativos.",
       status: "En desarrollo"
     },
+    videos: [
+      {
+        id: "lacteos-don-juan-presentacion",
+        name: "Finca Ecológica Don Juan",
+        description: "Conoce nuestro proceso de producción láctea y tours ecológicos",
+        url: videoFincaEcologicaDonJuan, 
+        thumbnail: logo
+      }
+    ],
     images: [
       {
         url: require("../assets/images/finca-ecologica-don-juan/bosque.JPG"),
@@ -169,7 +186,7 @@ export const businessesData: Business[] = [
     ],
     contactInfo: {
       email: "contacto@lacteosdonjuan.com",
-      phone: "+506 6000-1111",
+      phone: "+506 8810-6090",
       address: "Finca Don Juan, 1km norte de la plaza de deportes"
     },
     socialMedia: {
@@ -189,41 +206,50 @@ export const businessesData: Business[] = [
     type: BusinessType.COFFE,
     products: [
       {
-        id: "cafe-altura",
+        id: "cafe-la-marcela-250g-premio-primero",
         name: "Café 250g",
         description: "Café de excelencia que ha ganado premios de primer lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
         image: require("../assets/images/cafe-la-marcela/products/cafe.jpg"),
         price: "₡3.500"
       },
       {
-        id: "cafe-altura",
+        id: "cafe-la-marcela-250g-blanco",
         name: "Café 250g",
         description: "Café de excelencia que ha ganado premios de segundo lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
         image: require("../assets/images/cafe-la-marcela/products/blanco.jpg"),
         price: "₡3.500"
       },
       {
-        id: "cafe-altura",
+        id: "cafe-la-marcela-250g-negro",
         name: "Café 250g",
         description: "Café de excelencia procesado artesanalmente con métodos tradicionales familiares.",
         image: require("../assets/images/cafe-la-marcela/products/negro.jpg"),
         price: "₡3.500"
       },
       {
-        id: "cafe-altura",
+        id: "cafe-la-marcela-160g-negro",
         name: "Café 160g",
         description: "Café de excelencia que ha ganado premios, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
         image: require("../assets/images/cafe-la-marcela/products/negro_160.jpg"),
         price: "₡2.000"
       },
       {
-        id: "cafe-altura",
+        id: "cafe-la-marcela-250g-plateado",
         name: "Café 250g",
         description: "Café de excelencia procesado artesanalmente con métodos tradicionales familiares, a un precio más accesible para todas las familias.",
         image: require("../assets/images/cafe-la-marcela/products/plateado.jpg"),
         price: "₡2.000"
       },
 
+    ],
+    videos: [
+      {
+        id: "cafe-la-marcela-presentacion",
+        name: "Café La Marcela",
+        description: "Descubre nuestro proceso de cultivo y tueste artesanal de café de altura",
+        url: videoCafeLaMarcela,
+        thumbnail: logoCafeLaMarcela
+      }
     ],
     images: [
       {
@@ -281,6 +307,15 @@ export const businessesData: Business[] = [
         image: require("../assets/images/api-zaid/products/botella_215g.jpg"),
         price: "₡2.000"
       },
+    ],
+    videos: [
+      {
+        id: "api-zaid-presentacion",
+        name: "Presentación Api-Zaid",
+        description: "Video promocional mostrando el proceso de producción de miel artesanal",
+        url: videoApiZaid,
+        thumbnail: logoApiZaid
+      }
     ],
     images: [
       {
@@ -496,6 +531,22 @@ export const businessesData: Business[] = [
         name: "Visita al apiario"
       }
     ],
+    videos: [
+      {
+        id: "api-g-presentacion",
+        name: "Api G - Apiarios Gil",
+        description: "Conoce nuestro apiario y el proceso de producción de miel cruda",
+        url: videoApiG,
+        thumbnail: logoApiG
+      },
+      {
+        id: "api-g-presentacion-2",
+        name: "Api G - Proceso Apícola",
+        description: "Descubre más sobre nuestras técnicas apícolas y manejo sostenible de colmenas",
+        url: videoApiG1,
+        thumbnail: logoApiG
+      }
+    ],
     contactInfo: {
       email: "gilberdeljesus@gmail.com",
       phone: "+506 8794-4945",
@@ -517,7 +568,7 @@ export const businessesData: Business[] = [
     type: BusinessType.COFFE,
     products: [
       {
-        id: "cafe-altura",
+        id: "finca-zamora-cafe-altura",
         name: "Café de Altura",
         description: "Café cultivado a 1090 msnm con certificación Rain Forest Alliance y Coffee Practices. Actualmente se vende en el Beneficio Río Negro, con planes de ofrecer café tostado directamente en el futuro.",
         image: placeholder,
@@ -568,6 +619,15 @@ export const businessesData: Business[] = [
         name: "Recolecta de café en temporada"
       },
     ],
+    videos: [
+      {
+        id: "finca-zamora-presentacion",
+        name: "Finca Zamora y Fallas",
+        description: "Descubre nuestra tradición cafetalera de más de 60 años",
+        url: videoFincaZamoraFallas,
+        thumbnail: logoFincaZamora
+      }
+    ],
     contactInfo: {
       email: "fincazamorayfallas@gmail.com",
       phone: "+506 8825-8659",
@@ -581,6 +641,7 @@ export const businessesData: Business[] = [
     id: "mieles-santa-lucia",
     name: "Mieles Santa Lucía",
     logo: placeholder,
+    backgroundImage: placeholder,
     shortDescription:
       "Mieles Santa Lucía es un emprendimiento apícola que comenzó en 2016, especializado en la producción artesanal de miel de diferentes especies de abejas nativas y productos derivados como propóleo y propomiel, ubicado en una tradicional zona cafetalera.",
     longDescription:
@@ -640,6 +701,15 @@ export const businessesData: Business[] = [
         name: "Panal de abejas"
       },
     ],
+    videos: [
+      {
+        id: "mieles-santa-lucia-presentacion",
+        name: "Mieles Santa Lucía",
+        description: "Conoce nuestro proceso apícola con abejas nativas jicota, mariola y barcino",
+        url: placeholder,
+        thumbnail: placeholder
+      }
+    ],
     contactInfo: {
       email: "merardocrack2512@gmail.com",
       phone: "+506 8515-9413",
@@ -653,6 +723,7 @@ export const businessesData: Business[] = [
     id: "pasteleria-reposteria-jessy",
     name: "Repostería Jessy",
     logo: placeholder,
+    backgroundImage: placeholder,
     shortDescription:
       "Pastelería y Repostería Jessy nació del amor por crear postres únicos. Comenzó vendiendo esporádicamente a los vecinos, motivada por su pareja a emprender con la famosa torta chilena que fue todo un éxito. Hoy cuenta con 25 tipos de postres diferentes.",
     longDescription:
@@ -754,6 +825,15 @@ export const businessesData: Business[] = [
       {
         url: require("../assets/images/reposteria-jessy/tres_leches.JPG"),
         name: "Entregas a domicilio"
+      }
+    ],
+    videos: [
+      {
+        id: "reposteria-jessy-presentacion",
+        name: "Repostería Jessy",
+        description: "Descubre nuestros 25 tipos de postres hechos con dulce amor",
+        url: videoReposteriaJessy,
+        thumbnail: placeholder
       }
     ],
     contactInfo: {

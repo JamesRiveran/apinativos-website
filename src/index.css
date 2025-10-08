@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom utilities */
 @layer utilities {
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -30,7 +29,7 @@ html {
   }
 }
 
-/* Custom animations */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -82,7 +81,7 @@ html {
   }
 }
 
-/* Animation classes */
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -103,7 +102,7 @@ html {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Hover effects */
+
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -113,7 +112,7 @@ html {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Loading state */
+
 .loading-skeleton {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
@@ -128,4 +127,21 @@ html {
     background-position: -200% 0;
   }
 }
+
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
 

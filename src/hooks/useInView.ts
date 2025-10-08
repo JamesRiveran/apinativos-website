@@ -13,9 +13,20 @@ export const useInView = (options: useInViewOptions = {}) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
-        if (entry.isIntersecting && !hasBeenInView) {
-          setHasBeenInView(true);
+        
+        try {
+          setIsInView(entry.isIntersecting);
+          if (entry.isIntersecting && !hasBeenInView) {
+            setHasBeenInView(true);
+          }
+        } catch (error) {
+          
+          if (
+            error instanceof Error && 
+            !error.message.includes('ResizeObserver loop completed with undelivered notifications')
+          ) {
+            console.warn('Error in useInView observer:', error);
+          }
         }
       },
       {
@@ -26,15 +37,27 @@ export const useInView = (options: useInViewOptions = {}) => {
 
     const currentElement = ref.current;
     if (currentElement) {
-      observer.observe(currentElement);
+      try {
+        observer.observe(currentElement);
+      } catch (error) {
+        
+        console.warn('Error observing element:', error);
+      }
     }
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
+      try {
+        if (currentElement) {
+          observer.unobserve(currentElement);
+        }
+        observer.disconnect();
+      } catch (error) {
+        
+        console.warn('Error cleaning up observer:', error);
       }
     };
   }, [hasBeenInView, options.threshold, options.rootMargin]);
 
   return { ref, isInView, hasBeenInView };
 };
+
