@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Business } from "../../types";
 import { ScaleIn } from "../animations/AnimationComponents";
+import LazyImage from "../ui/LazyImage";
+import { createBlurDataURL } from "../../lib/imageUtils";
 
 interface BusinessCardProps {
   business: Business;
@@ -24,13 +26,21 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, delay = 0 }) => {
         }}
       >
         <div className="h-48 overflow-hidden relative">
-          <motion.img
-            src={business.logo}
-            alt={business.name}
-            className="w-full h-full object-cover"
+          <motion.div
+            className="w-full h-full"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-          />
+          >
+            <LazyImage
+              src={business.logo}
+              alt={business.name}
+              width="100%"
+              height="100%"
+              className="w-full h-full"
+              placeholder={createBlurDataURL(20, 12)}
+              objectFit="cover"
+            />
+          </motion.div>
           <motion.div
             className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100"
             transition={{ duration: 0.3 }}

@@ -15,6 +15,14 @@ export enum BusinessType {
     image: string;
     price: string;
   }
+
+  export interface Video {
+    id: string;
+    name: string;
+    description?: string;
+    url: string;
+    thumbnail?: string;
+  }
   
   export interface ContactInfo {
     email: string;
@@ -39,6 +47,7 @@ export enum BusinessType {
     longDescription: string;
     type: BusinessType;
     products: Product[];
+    videos?: Video[];
     tours?: Tour[];
     soda?: {
       description: string;
@@ -50,7 +59,7 @@ export enum BusinessType {
     };
     images: Array<{
       url: string;
-      name: string; // Añade esta propiedad
+      name: string;
     }>;
     contactInfo: ContactInfo;
     socialMedia: SocialMedia;

@@ -1,21 +1,42 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import BusinessLayout from "../layouts/BusinessLayout";
 import Hero from "../components/common/Hero";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
 import { associationData } from "../data/associationData";
-
+import { getBusinessById } from "../data/businessesData";
+import placeholder from "../assets/images/placeholder.jpg";
 const Contact: React.FC = () => {
-  const { contactInfo, socialMedia } = associationData;
+  const { businessId } = useParams<{ businessId?: string }>();
+  const business = businessId ? getBusinessById(businessId) : null;
+  
+  const contactInfo = business?.contactInfo || associationData.contactInfo;
+  const socialMedia = business?.socialMedia || associationData.socialMedia;
+  const entityName = business?.name || associationData.name;
+  
+  // Función para obtener imagen aleatoria de la galería de la empresa
+  const getRandomBusinessImage = () => {
+    if (business && business.images && business.images.length > 0) {
+      const randomIndex = Math.floor(Math.random() * business.images.length);
+      return business.images[randomIndex].url;
+    }
+    return placeholder;
+  };
+  
+  const backgroundImage = business ? getRandomBusinessImage() : placeholder;
+
+  const Layout = business ? BusinessLayout : MainLayout;
 
   return (
-    <MainLayout>
+    <Layout>
       <Hero
-        title="Contáctenos"
+        title={`Contáctenos - ${entityName}`}
         subtitle="Estamos para servirle"
-        backgroundImage="/assets/images/placeholder.jpg"
+        backgroundImage={backgroundImage}
         height="medium"
       />
 
@@ -72,7 +93,7 @@ const Contact: React.FC = () => {
       </div>
     </section>
 
-    </MainLayout>
+    </Layout>
   );
 };
 

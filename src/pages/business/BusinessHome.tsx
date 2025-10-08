@@ -2,17 +2,21 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Carousel from '../../components/ui/Carousel';
 import Modal from '../../components/ui/Modal';
+import VideoModal from '../../components/ui/VideoModal';
+import LazyImage from '../../components/ui/LazyImage';
 import BusinessLayout from '../../layouts/BusinessLayout';
 import Hero from '../../components/common/Hero';
 import { Button } from '../../components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card';
 import { getBusinessById } from '../../data/businessesData';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { createBlurDataURL } from '../../lib/imageUtils';
+import { MapPin, Phone, Mail, Play } from 'lucide-react';
 import placeholderImage from '../../assets/images/finca-ecologica-don-juan/logo.jpg'; 
 import { FadeInUp, StaggerContainer, StaggerItem } from '../../components/animations/AnimationComponents';
-import { GradientOrb } from '../../components/animations/BackgroundEffects'; 
+import { GradientOrb } from '../../components/animations/BackgroundEffects';
+import { Video } from '../../types'; 
 
-// Carrusel con autoavance cada 3 segundos, mostrando 8 imágenes aleatorias por ronda
+
 function getRandomSample<T>(arr: T[], n: number): T[] {
   const copy = [...arr];
   for (let i = copy.length - 1; i > 0; i--) {
@@ -31,7 +35,7 @@ const AutoCarousel: React.FC<{ images: { url: string; name?: string }[] }> = ({ 
     if (roundImages.length <= 1) return;
     timeoutRef.current = setTimeout(() => {
       if (current === roundImages.length - 1) {
-        // Nueva ronda de imágenes aleatorias
+        
         setRoundImages(getRandomSample(images, Math.min(8, images.length)));
         setCurrent(0);
       } else {
@@ -43,7 +47,7 @@ const AutoCarousel: React.FC<{ images: { url: string; name?: string }[] }> = ({ 
     };
   }, [current, roundImages, images]);
 
-  // Si cambian las imágenes base, reiniciar la ronda
+  
   useEffect(() => {
     setRoundImages(getRandomSample(images, Math.min(8, images.length)));
     setCurrent(0);
@@ -56,9 +60,10 @@ const AutoCarousel: React.FC<{ images: { url: string; name?: string }[] }> = ({ 
 const BusinessHome: React.FC = () => {
   const { businessId } = useParams<{ businessId: string }>();
   const business = getBusinessById(businessId || '');
-  // Type for modalProduct: product type or null
+  
   type ProductType = typeof business extends { products: Array<infer P> } ? P : any;
   const [modalProduct, setModalProduct] = useState<null | ProductType>(null);
+  const [modalVideo, setModalVideo] = useState<Video | null>(null);
 
   useEffect(() => {
     if (business) {
@@ -159,12 +164,7 @@ const BusinessHome: React.FC = () => {
             </div>
           </FadeInUp>
         </div>
-      </section>
-
-
-
-      {/* Catálogo de productos destacado */}
-      {business.products && business.products.length > 0 && (
+      </section>{business.products && business.products.length > 0 && (
         <section className="py-16 bg-gray-50 relative overflow-hidden">
           <div className="container max-w-5xl mx-auto px-4">
             <FadeInUp delay={0.1}>
@@ -181,18 +181,23 @@ const BusinessHome: React.FC = () => {
                     onClick={() => setModalProduct(product)}
                   >
                     <CardHeader className="flex flex-col items-center justify-center pb-2">
-                      <img
-                        src={
-                          Array.isArray(product.image)
+                      <div className="w-32 h-32 mb-2 rounded-xl overflow-hidden border shadow bg-white">
+                        <LazyImage
+                          src={Array.isArray(product.image)
                             ? product.image[0]
                             : typeof product.image === 'string'
                               ? product.image
                               : ''
-                        }
-                        alt={product.name}
-                        className="w-32 h-32 object-cover rounded-xl mb-2 border bg-white shadow"
-                        onError={e => { (e.target as HTMLImageElement).src = '/logo.jpg'; }}
-                      />
+                          }
+                          alt={product.name}
+                          width="100%"
+                          height="100%"
+                          className="w-full h-full"
+                          placeholder={createBlurDataURL(8, 8)}
+                          fallbackSrc={placeholderImage}
+                          objectFit="cover"
+                        />
+                      </div>
                       <CardTitle className="text-lg text-center font-bold text-primary/90 group-hover:text-primary">{product.name}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-1 flex flex-col justify-between">
@@ -210,23 +215,27 @@ const BusinessHome: React.FC = () => {
                 </Link>
               </Button>
             </div>
-          </div>
-          {/* Modal de producto */}
-          <Modal isOpen={!!modalProduct} onClose={() => setModalProduct(null)}>
+          </div><Modal isOpen={!!modalProduct} onClose={() => setModalProduct(null)}>
             {modalProduct && (
               <div className="w-full max-w-xs mx-auto flex flex-col items-center bg-white rounded-2xl shadow-2xl p-6 border border-primary/20">
-                <img
-                  src={
-                    Array.isArray(modalProduct.image)
+                <div className="w-40 h-40 mb-4 rounded-xl overflow-hidden border-2 border-primary/20 shadow bg-white">
+                  <LazyImage
+                    src={Array.isArray(modalProduct.image)
                       ? modalProduct.image[0]
                       : typeof modalProduct.image === 'string'
                         ? modalProduct.image
                         : ''
-                  }
-                  alt={modalProduct.name}
-                  className="w-40 h-40 object-cover rounded-xl border-2 border-primary/20 bg-white shadow mb-4"
-                  onError={e => { (e.target as HTMLImageElement).src = '/logo.jpg'; }}
-                />
+                    }
+                    alt={modalProduct.name}
+                    width="100%"
+                    height="100%"
+                    className="w-full h-full"
+                    placeholder={createBlurDataURL(10, 10)}
+                    fallbackSrc={placeholderImage}
+                    priority={true}
+                    objectFit="cover"
+                  />
+                </div>
                 <h2 className="text-2xl font-bold text-primary mb-2 text-center">{modalProduct.name}</h2>
                 <p className="text-gray-700 text-base mb-4 text-center leading-relaxed">{modalProduct.description}</p>
                 <div className="text-3xl font-extrabold text-primary bg-primary/10 rounded-lg px-6 py-2 mb-4 shadow text-center animate-pulse">
@@ -241,6 +250,51 @@ const BusinessHome: React.FC = () => {
               </div>
             )}
           </Modal>
+        </section>
+      )}{business.videos && business.videos.length > 0 && (
+        <section className="py-16 bg-white relative overflow-hidden">
+          <div className="container max-w-5xl mx-auto px-4">
+            <FadeInUp delay={0.1}>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-800 mb-2">Videos</h2>
+                <p className="text-lg text-gray-600">Conoce más sobre nosotros</p>
+              </div>
+            </FadeInUp>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {business.videos.map((video, idx) => (
+                <FadeInUp key={video.id} delay={0.2 + idx * 0.1}>
+                  <Card
+                    className="hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 h-full flex flex-col cursor-pointer border-2 border-transparent hover:border-primary/40 bg-white/90 group"
+                    onClick={() => setModalVideo(video)}
+                  >
+                    <CardHeader className="flex flex-col items-center justify-center pb-2 relative">
+                      <div className="relative w-full h-48 rounded-xl overflow-hidden mb-2 border bg-gray-100 shadow">
+                        <LazyImage
+                          src={video.thumbnail || placeholderImage}
+                          alt={video.name}
+                          width="100%"
+                          height="100%"
+                          className="w-full h-full"
+                          placeholder={createBlurDataURL(16, 12)}
+                          fallbackSrc={placeholderImage}
+                          objectFit="cover"
+                        />
+                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/50 transition-all duration-300">
+                          <Play className="h-16 w-16 text-white group-hover:scale-110 transition-transform duration-300" />
+                        </div>
+                      </div>
+                      <CardTitle className="text-lg text-center font-bold text-primary/90 group-hover:text-primary">{video.name}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-1 flex flex-col justify-between">
+                      {video.description && (
+                        <div className="text-gray-600 text-base mb-2 text-center min-h-[48px] font-medium">{video.description}</div>
+                      )}
+                    </CardContent>
+                  </Card>
+                </FadeInUp>
+              ))}
+            </div>
+          </div>
         </section>
       )}
 
@@ -275,7 +329,11 @@ const BusinessHome: React.FC = () => {
             </div>
           </FadeInUp>
         </div>
-      </section>
+      </section><VideoModal
+        isOpen={!!modalVideo}
+        onClose={() => setModalVideo(null)}
+        video={modalVideo}
+      />
     </BusinessLayout>
   );
 };

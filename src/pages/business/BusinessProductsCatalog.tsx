@@ -6,6 +6,8 @@ import Hero from '../../components/common/Hero';
 import { getBusinessById } from '../../data/businessesData';
 import { Card, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
+import LazyImage from '../../components/ui/LazyImage';
+import { createBlurDataURL } from '../../lib/imageUtils';
 import logo from '../../assets/images/finca-ecologica-don-juan/logo.jpg'; 
 import { FadeInUp, ScaleIn, StaggerContainer, StaggerItem } from '../../components/animations/AnimationComponents';
 import { GradientOrb } from '../../components/animations/BackgroundEffects';
@@ -13,11 +15,11 @@ import { GradientOrb } from '../../components/animations/BackgroundEffects';
 const BusinessProductsCatalog: React.FC = () => {
   const { businessId } = useParams<{ businessId: string }>();
   const business = getBusinessById(businessId || '');
-  // Modal state for product details
+  
   type ProductType = typeof business extends { products: Array<infer P> } ? P : any;
   const [modalProduct, setModalProduct] = useState<null | ProductType>(null);
 
-  // Scroll to top on mount
+  
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -71,10 +73,15 @@ const BusinessProductsCatalog: React.FC = () => {
                           onClick={() => setModalProduct(product)}
                         >
                           <div className="relative aspect-square overflow-hidden">
-                            <img
+                            <LazyImage
                               src={product.image}
                               alt={product.name}
-                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                              width="100%"
+                              height="100%"
+                              className="w-full h-full transition-transform duration-300 group-hover:scale-110"
+                              placeholder={createBlurDataURL(16, 16)}
+                              fallbackSrc={logo}
+                              objectFit="cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
                           </div>
@@ -96,23 +103,27 @@ const BusinessProductsCatalog: React.FC = () => {
                     </StaggerItem>
                   ))}
                 </div>
-              </StaggerContainer>
-              {/* Modal de producto */}
-              <Modal isOpen={!!modalProduct} onClose={() => setModalProduct(null)}>
+              </StaggerContainer><Modal isOpen={!!modalProduct} onClose={() => setModalProduct(null)}>
                 {modalProduct && (
                   <div className="w-full max-w-xs mx-auto flex flex-col items-center bg-white rounded-2xl shadow-2xl p-6 border border-primary/20">
-                    <img
-                      src={
-                        Array.isArray(modalProduct.image)
+                    <div className="w-40 h-40 mb-4 mx-auto rounded-xl overflow-hidden border-2 border-primary/20 shadow">
+                      <LazyImage
+                        src={Array.isArray(modalProduct.image)
                           ? modalProduct.image[0]
                           : typeof modalProduct.image === 'string'
                             ? modalProduct.image
                             : ''
-                      }
-                      alt={modalProduct.name}
-                      className="w-40 h-40 object-cover rounded-xl border-2 border-primary/20 bg-white shadow mb-4 mx-auto"
-                      onError={e => { (e.target as HTMLImageElement).src = '/logo.jpg'; }}
-                    />
+                        }
+                        alt={modalProduct.name}
+                        width="100%"
+                        height="100%"
+                        className="w-full h-full"
+                        placeholder={createBlurDataURL(10, 10)}
+                        fallbackSrc={logo}
+                        priority={true}
+                        objectFit="cover"
+                      />
+                    </div>
                     <h2 className="text-2xl font-bold text-primary mb-2 text-center">{modalProduct.name}</h2>
                     <p className="text-gray-700 text-base mb-4 text-center leading-relaxed">{modalProduct.description}</p>
                     <div className="text-3xl font-extrabold text-primary bg-primary/10 rounded-lg px-6 py-2 mb-4 shadow text-center animate-pulse">

@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import { getBusinessById } from "../data/businessesData";
@@ -10,6 +10,12 @@ interface BusinessLayoutProps {
 
 const BusinessLayout: React.FC<BusinessLayoutProps> = ({ children }) => {
   const { businessId } = useParams<{ businessId: string }>();
+  const location = useLocation();
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [businessId, location.pathname]);
 
   const business = getBusinessById(businessId || "");
 
@@ -40,3 +46,4 @@ const BusinessLayout: React.FC<BusinessLayoutProps> = ({ children }) => {
 };
 
 export default BusinessLayout;
+

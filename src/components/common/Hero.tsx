@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FloatingParticles, GradientOrb } from "../animations/BackgroundEffects";
 import { FloatingElement } from "../animations/SpecialEffects";
+import LazyImage from "../ui/LazyImage";
+import { createBlurDataURL } from "../../lib/imageUtils";
 
 interface HeroProps {
   title: string;
@@ -25,28 +27,31 @@ const Hero: React.FC<HeroProps> = ({
   }[height];
 
   return (
-    <div
-      className={`relative flex items-center justify-center ${heightClass} w-full bg-contain bg-center bg-no-repeat overflow-hidden`}
-      style={{ 
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundColor: '#f3f4f6' // Fondo gris claro para el espacio vacío
-      }}
-    >
-      {/* Background Effects */}
-      <FloatingParticles count={20} />
-      <GradientOrb className="absolute top-10 left-10" size="lg" color="gray" />
-      <GradientOrb className="absolute bottom-10 right-10" size="md" color="gray" />
+    <div className={`relative flex items-center justify-center ${heightClass} w-full overflow-hidden`}><div className="absolute inset-0">
+        <LazyImage
+          src={backgroundImage}
+          alt={title}
+          width="100%"
+          height="100%"
+          className="w-full h-full"
+          placeholder={createBlurDataURL(30, 20)}
+          priority={true} 
+          objectFit="cover"
+        />
+      </div><FloatingParticles count={20} />
+      <GradientOrb className="absolute top-10 left-10 z-10" size="lg" color="gray" />
+      <GradientOrb className="absolute bottom-10 right-10 z-10" size="md" color="gray" />
       
       {overlay && (
         <motion.div 
-          className="absolute inset-0 bg-black bg-opacity-50"
+          className="absolute inset-0 bg-black bg-opacity-50 z-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         />
       )}
 
-      <div className="relative z-10 text-center px-4 w-full">
+      <div className="relative z-30 text-center px-4 w-full">
         <motion.h1 
           className="text-4xl md:text-5xl font-bold text-white mb-4"
           initial={{ opacity: 0, y: 50 }}
@@ -81,3 +86,4 @@ const Hero: React.FC<HeroProps> = ({
 };
 
 export default Hero;
+
