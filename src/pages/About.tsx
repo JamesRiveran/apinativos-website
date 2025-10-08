@@ -12,7 +12,7 @@ import {
 } from "../components/animations/AnimationComponents";
 import { PageTransition } from "../components/animations/SpecialEffects";
 import { GradientOrb } from "../components/animations/BackgroundEffects";
-
+import placeholder from "../assets/images/placeholder.jpg"; 
 const About: React.FC = () => {
   const cardData = [
     {
@@ -38,7 +38,7 @@ const About: React.FC = () => {
         <Hero
           title="Quiénes Somos"
           subtitle={associationData.slogan}
-          backgroundImage="/assets/images/placeholder.jpg"
+          backgroundImage={placeholder}
           height="medium"
         />
 
@@ -105,10 +105,7 @@ const About: React.FC = () => {
                   </motion.div>
                 </StaggerItem>
               ))}
-            </StaggerContainer>
-
-            {/* Additional section with contact info */}
-            <FadeInUp delay={0.8} className="mt-16">
+            </StaggerContainer><FadeInUp delay={0.8} className="mt-16">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
@@ -145,3 +142,4 @@ const About: React.FC = () => {
 };
 
 export default About;
+

@@ -19,12 +19,21 @@ const BusinessAboutUs: React.FC = () => {
     );
   }
 
+  // Función para obtener imagen aleatoria de la galería de la empresa
+  const getRandomBusinessImage = () => {
+    if (business.images && business.images.length > 0) {
+      const randomIndex = Math.floor(Math.random() * business.images.length);
+      return business.images[randomIndex].url;
+    }
+    return '/assets/images/placeholder.jpg';
+  };
+
   return (
     <BusinessLayout>
       <Hero
         title={`Sobre ${business.name}`}
         subtitle="Nuestra historia y valores"
-        backgroundImage={business.images[1]?.url || business.images[0]?.url || '/assets/images/placeholder.jpg'}
+        backgroundImage={getRandomBusinessImage()}
         height="medium"
       />
 
