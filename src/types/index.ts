@@ -42,6 +42,7 @@ export enum BusinessType {
     id: string;
     name: string;
     logo: string;
+    location?: { lat: number; lng: number };
     backgroundImage?: string;
     shortDescription: string;
     longDescription: string;

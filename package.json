@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-label": "^2.1.4",
+    "@radix-ui/react-popover": "^1.1.15",
+    "@radix-ui/react-scroll-area": "^1.2.10",
     "@radix-ui/react-separator": "^1.1.4",
-    "@radix-ui/react-slot": "^1.2.0",
+    "@radix-ui/react-slot": "^1.2.3",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -17,11 +20,16 @@
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "flowbite": "^3.1.2",
     "framer-motion": "^12.23.9",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.503.0",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-leaflet": "^5.0.0",
+    "react-phone-number-input": "^3.4.12",
     "react-router-dom": "^6.30.0",
     "react-scripts": "5.0.1",
     "tailwind-merge": "^3.2.0",
@@ -53,5 +61,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.21"
   }
 }

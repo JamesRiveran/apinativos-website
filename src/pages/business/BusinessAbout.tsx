@@ -4,6 +4,7 @@ import BusinessLayout from '../../layouts/BusinessLayout';
 import Hero from '../../components/common/Hero';
 import { getBusinessById } from '../../data/businessesData';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
+import Map from '../../components/common/Map';
 
 const BusinessAboutUs: React.FC = () => {
   const { businessId } = useParams<{ businessId: string }>();
@@ -19,7 +20,6 @@ const BusinessAboutUs: React.FC = () => {
     );
   }
 
-  // Función para obtener imagen aleatoria de la galería de la empresa
   const getRandomBusinessImage = () => {
     if (business.images && business.images.length > 0) {
       const randomIndex = Math.floor(Math.random() * business.images.length);
@@ -54,6 +54,17 @@ const BusinessAboutUs: React.FC = () => {
               <p><strong>Email:</strong> {business.contactInfo.email}</p>
             </CardContent>
           </Card>
+          <div className="mt-6">
+            {business.location ? (
+              <Map
+                markers={[{ lat: business.location.lat, lng: business.location.lng, title: business.name, description: business.contactInfo.address }]}
+                single
+                height="320px"
+              />
+            ) : (
+              <p className="text-center text-muted-foreground">Ubicación no disponible</p>
+            )}
+          </div>
         </div>
       </section>
     </BusinessLayout>

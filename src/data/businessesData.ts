@@ -184,6 +184,7 @@ export const businessesData: Business[] = [
         name: "Zonas de recreación"
       }
     ],
+    location: { lat: 8.843077314715543, lng: -83.02542138927491 },
     contactInfo: {
       email: "contacto@lacteosdonjuan.com",
       phone: "+506 8810-6090",
@@ -257,6 +258,7 @@ export const businessesData: Business[] = [
         name: "Primer Lugar de Feria de Café Zona Alta de Sabalito"
       }
     ],
+    location: { lat: 8.89036245776725, lng: -82.77323665040109 },
     contactInfo: {
       email: "mileidyalfaro311@gmail.com",
       phone: "+506 8635-7243",
@@ -327,6 +329,7 @@ export const businessesData: Business[] = [
         name: "Produtos de miel en general"
       }
     ],
+    location: { lat: 8.89036245776725, lng: -82.77323665040109 },
     contactInfo: {
       email: "mileidyalfaro311@gmail.com",
       phone: "+506 8635-7243",
@@ -547,6 +550,7 @@ export const businessesData: Business[] = [
         thumbnail: logoApiG
       }
     ],
+    location: { lat: 8.891351189758629, lng: -82.7945733260498 },
     contactInfo: {
       email: "gilberdeljesus@gmail.com",
       phone: "+506 8794-4945",
@@ -628,6 +632,7 @@ export const businessesData: Business[] = [
         thumbnail: logoFincaZamora
       }
     ],
+    location: { lat: 8.865747908947986, lng: -82.88051262725706 },
     contactInfo: {
       email: "fincazamorayfallas@gmail.com",
       phone: "+506 8825-8659",
@@ -710,6 +715,7 @@ export const businessesData: Business[] = [
         thumbnail: placeholder
       }
     ],
+    location: { lat: 8.884404134646255, lng: -82.81861105198229 },
     contactInfo: {
       email: "merardocrack2512@gmail.com",
       phone: "+506 8515-9413",
@@ -836,6 +842,7 @@ export const businessesData: Business[] = [
         thumbnail: placeholder
       }
     ],
+    location: { lat: 8.891351189758629, lng: -82.7945733260498 },
     contactInfo: {
       email: "jessicayoselim@gmail.com",
       phone: "+506 8794-4995",
