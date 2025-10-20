@@ -32,7 +32,6 @@ const BusinessGallery: React.FC = () => {
     );
   }
 
-  // Función para obtener imagen aleatoria de la galería de la empresa
   const getRandomBusinessImage = () => {
     if (business.images && business.images.length > 0) {
       const randomIndex = Math.floor(Math.random() * business.images.length);

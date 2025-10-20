@@ -11,7 +11,7 @@ interface LazyImageProps {
   fallbackSrc?: string;
   onLoad?: () => void;
   onError?: () => void;
-  priority?: boolean; // Para imágenes críticas que no necesitan lazy loading
+  priority?: boolean;
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
 }
 
@@ -65,7 +65,6 @@ const LazyImage: React.FC<LazyImageProps> = ({
     });
     onError?.();
     
-    // Si hay un fallback, intentar cargarlo
     if (fallbackSrc && imgRef.current) {
       imgRef.current.src = fallbackSrc;
     }
