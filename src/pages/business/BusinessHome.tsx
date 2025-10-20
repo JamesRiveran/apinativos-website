@@ -11,6 +11,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/ca
 import { getBusinessById } from '../../data/businessesData';
 import { createBlurDataURL } from '../../lib/imageUtils';
 import { MapPin, Phone, Mail, Play } from 'lucide-react';
+import Map from '../../components/common/Map';
 import placeholderImage from '../../assets/images/finca-ecologica-don-juan/logo.jpg'; 
 import { FadeInUp, StaggerContainer, StaggerItem } from '../../components/animations/AnimationComponents';
 import { GradientOrb } from '../../components/animations/BackgroundEffects';
@@ -251,52 +252,7 @@ const BusinessHome: React.FC = () => {
             )}
           </Modal>
         </section>
-      )}{business.videos && business.videos.length > 0 && (
-        <section className="py-16 bg-white relative overflow-hidden">
-          <div className="container max-w-5xl mx-auto px-4">
-            <FadeInUp delay={0.1}>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">Videos</h2>
-                <p className="text-lg text-gray-600">Conoce más sobre nosotros</p>
-              </div>
-            </FadeInUp>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {business.videos.map((video, idx) => (
-                <FadeInUp key={video.id} delay={0.2 + idx * 0.1}>
-                  <Card
-                    className="hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 h-full flex flex-col cursor-pointer border-2 border-transparent hover:border-primary/40 bg-white/90 group"
-                    onClick={() => setModalVideo(video)}
-                  >
-                    <CardHeader className="flex flex-col items-center justify-center pb-2 relative">
-                      <div className="relative w-full h-48 rounded-xl overflow-hidden mb-2 border bg-gray-100 shadow">
-                        <LazyImage
-                          src={video.thumbnail || placeholderImage}
-                          alt={video.name}
-                          width="100%"
-                          height="100%"
-                          className="w-full h-full"
-                          placeholder={createBlurDataURL(16, 12)}
-                          fallbackSrc={placeholderImage}
-                          objectFit="cover"
-                        />
-                        <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/50 transition-all duration-300">
-                          <Play className="h-16 w-16 text-white group-hover:scale-110 transition-transform duration-300" />
-                        </div>
-                      </div>
-                      <CardTitle className="text-lg text-center font-bold text-primary/90 group-hover:text-primary">{video.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-1 flex flex-col justify-between">
-                      {video.description && (
-                        <div className="text-gray-600 text-base mb-2 text-center min-h-[48px] font-medium">{video.description}</div>
-                      )}
-                    </CardContent>
-                  </Card>
-                </FadeInUp>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+          )}
 
       <section className="py-16 bg-white relative overflow-hidden">
         <GradientOrb className="absolute top-20 right-20 -z-10" size="sm" color="gray" />
@@ -326,6 +282,21 @@ const BusinessHome: React.FC = () => {
                   </StaggerItem>
                 </div>
               </StaggerContainer>
+            </div>
+          </FadeInUp>
+          <FadeInUp delay={0.3}>
+            <div className="container mx-auto px-4 mt-6">
+              {business.location ? (
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <Map
+                    markers={[{ lat: business.location.lat, lng: business.location.lng, title: business.name, description: business.contactInfo.address }]}
+                    single
+                    height="240px"
+                  />
+                </div>
+              ) : (
+                <div className="text-center text-muted-foreground mt-4">Ubicación no disponible</div>
+              )}
             </div>
           </FadeInUp>
         </div>
