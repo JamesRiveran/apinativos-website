@@ -1,7 +1,7 @@
 import { Business, BusinessType } from "../types";
 import logo from '../assets/images/finca-ecologica-don-juan/logo.jpg';
 import placeholder from '../assets/images/placeholder.jpg';
-import logoApiZaid from '../assets/images/api-zaid/api-zaid-logo.jpg';
+import logoApiZaid from '../assets/images/api-zaid/api-zaid-logo.jpeg';
 import logoCafeLaMarcela from '../assets/images/cafe-la-marcela/cafe_la_marcela_logo.png';
 import logoFincaZamora from '../assets/images/finca-zamoraFallas/logo.jpg';
 import logoApiG from '../assets/images/api-g/logo.jpg';
@@ -182,7 +182,15 @@ export const businessesData: Business[] = [
       {
         url: require("../assets/images/finca-ecologica-don-juan/zonasRecreacion.JPG"),
         name: "Zonas de recreación"
-      }
+      },
+      {
+        url: require("../assets/images/finca-ecologica-don-juan/senderos.JPG"),
+        name: "Senderos Ecológicos"
+      },
+      {
+        url: require("../assets/images/finca-ecologica-don-juan/tour.JPG"),
+        name: "Tour en la finca"
+      },
     ],
     location: { lat: 8.843077314715543, lng: -83.02542138927491 },
     contactInfo: {
@@ -191,8 +199,7 @@ export const businessesData: Business[] = [
       address: "Finca Don Juan, 1km norte de la plaza de deportes"
     },
     socialMedia: {
-      facebook: "https://facebook.com/lacteosdonjuan",
-      instagram: "https://instagram.com/lacteosdonjuan"
+      whatsapp: "+506 8810-6090",
     }
   },
   {
@@ -203,27 +210,27 @@ export const businessesData: Business[] = [
     shortDescription:
       "Café La Marcela es una empresa ubicada en Las Mellizas de Sabalito, Coto Brus, dedicada a la producción y comercialización de café de excelencia, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
     longDescription:
-      "Inspirada por el legado de su familia cafetalera, doña Mileidy decidió emprender y ampliar la producción, encargándose también del tueste y empaque del café. Café La Marcela ofrece productos que reflejan tradición, excelencia y esfuerzo constante.",
+      "Inspirada por el legado de su familia cafetalera, doña Mileidy decidió emprender y ampliar la producción y secado artesanal. Café La Marcela ofrece productos que reflejan tradición, excelencia y esfuerzo constante.",
     type: BusinessType.COFFE,
     products: [
       {
         id: "cafe-la-marcela-250g-premio-primero",
-        name: "Café 250g",
-        description: "Café de excelencia que ha ganado premios de primer lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
+        name: "Café Caturra Catuaí 250g",
+        description: "Café de excelencia que ha ganado premios de primer lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares. Es un café Caturra y Catuaí, cultivado en las montañas de Sabalito a más de 1.500 metros sobre el nivel del mar.",
         image: require("../assets/images/cafe-la-marcela/products/cafe.jpg"),
         price: "₡3.500"
       },
       {
         id: "cafe-la-marcela-250g-blanco",
-        name: "Café 250g",
-        description: "Café de excelencia que ha ganado premios de segundo lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares.",
+        name: "Café Obata 250g",
+        description: "Café de excelencia que ha ganado premios de segundo lugar café de altura, cultivado y procesado artesanalmente con métodos tradicionales familiares. Se trata de un café Obata, cultivado en las montañas de Sabalito a más de 1.300 metros sobre el nivel del mar.",
         image: require("../assets/images/cafe-la-marcela/products/blanco.jpg"),
         price: "₡3.500"
       },
       {
         id: "cafe-la-marcela-250g-negro",
-        name: "Café 250g",
-        description: "Café de excelencia procesado artesanalmente con métodos tradicionales familiares.",
+        name: "Café Catiguá 250g",
+        description: "Café de excelencia procesado artesanalmente con métodos tradicionales familiares. Es un café Catiguá, calidad de exportación, cultivado en las montañas de Sabalito a más de 1.500 metros sobre el nivel del mar.",
         image: require("../assets/images/cafe-la-marcela/products/negro.jpg"),
         price: "₡3.500"
       },
@@ -256,16 +263,24 @@ export const businessesData: Business[] = [
       {
         url: require("../assets/images/cafe-la-marcela/premio.JPG"),
         name: "Primer Lugar de Feria de Café Zona Alta de Sabalito"
-      }
+      },
+      {
+        url: require("../assets/images/cafe-la-marcela/entrevista.JPG"),
+        name: "Entrevista para video publicitario"
+      },
+      {
+        url: require("../assets/images/cafe-la-marcela/entrevistas.JPG"),
+        name: "Entrevista con encargada"
+      },
     ],
     location: { lat: 8.89036245776725, lng: -82.77323665040109 },
     contactInfo: {
       email: "mileidyalfaro311@gmail.com",
       phone: "+506 8635-7243",
-      address: "Las Mellizas de Sabalito, Coto Brus"
+      address: "Las Mellizas de Sabalito, Coto Brus. 300 metros norte de la iglesia católica. A mano derecha, casa color crema."
     },
     socialMedia: {
-      facebook: "https://www.facebook.com/people/Api-zaid/61561354187176/?mibextid=wwXIfr&rdid=Lwc6R7K6Sac0N9XP&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BnaxiykH1%2F%3Fmibextid%3DwwXIfr"
+      whatsapp: "+506 8635 7243"
     }
   },
   {
@@ -274,9 +289,9 @@ export const businessesData: Business[] = [
     logo: logoApiZaid,
     backgroundImage: logoApiZaid,
     shortDescription:
-      "Api-Zaid es un emprendimiento familiar ubicado en Las Mellizas de Sabalito, Coto Brus, dedicado a la producción y comercialización de miel artesanal de primer nivel producida por abejas mariolas (sin aguijón).",
+      "Api-Zaid es un emprendimiento familiar ubicado en Las Mellizas de Sabalito, Coto Brus, dedicado a la producción y comercialización de miel artesanal de primer nivel producida por abejas con aguijón.",
     longDescription:
-      "El proyecto de miel nació con la apicultura de abejas mariolas, una especie sin aguijón, y se ha convertido en una muestra de dedicación, innovación y respeto por la naturaleza. Api-Zaid ofrece miel en diferentes presentaciones para satisfacer las necesidades del cliente.",
+      "El proyecto de miel nació con la apicultura, y se ha convertido en una muestra de dedicación, innovación y respeto por la naturaleza. Api-Zaid ofrece miel en diferentes presentaciones para satisfacer las necesidades del cliente.",
     type: BusinessType.HONEY,
     products: [
       {
@@ -327,16 +342,25 @@ export const businessesData: Business[] = [
       {
         url: require("../assets/images/api-zaid/miel_general.JPG"),
         name: "Produtos de miel en general"
-      }
+      },
+      {
+        url: require("../assets/images/api-zaid/entrevista.JPG"),
+        name: "Entrevista con encargada"
+      },
+      {
+        url: require("../assets/images/api-zaid/miel.JPG"),
+        name: "Presentación de producto"
+      },
     ],
     location: { lat: 8.89036245776725, lng: -82.77323665040109 },
     contactInfo: {
       email: "mileidyalfaro311@gmail.com",
       phone: "+506 8635-7243",
-      address: "Las Mellizas de Sabalito, Coto Brus"
+      address: "Las Mellizas de Sabalito, Coto Brus. 300 metros norte de la iglesia católica. A mano derecha, casa color crema."
     },
     socialMedia: {
-      facebook: "https://www.facebook.com/people/Api-zaid/61561354187176/?mibextid=wwXIfr&rdid=Lwc6R7K6Sac0N9XP&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BnaxiykH1%2F%3Fmibextid%3DwwXIfr"
+      whatsapp: "+506 8635 7243",
+      instagram: "https://www.instagram.com/mielapi_zaid/?igsh=MTlmYmh2MThoanJ0ZA%3D%3D#",
     }
   },
   {
@@ -351,116 +375,95 @@ export const businessesData: Business[] = [
     type: BusinessType.HONEY,
     products: [
       {
-        id: "miel-cruda-650g",
-        name: "Miel Cruda 650g",
-        description: "Miel que no ha sido calentada, conservando todas sus propiedades naturales. Presentación de 650g.",
-        image: placeholder,
-        price: "₡5.300"
-      },
-      {
-        id: "miel-cruda-1000g",
-        name: "Miel Cruda 1000g",
-        description: "Miel que no ha sido calentada, conservando todas sus propiedades naturales. Presentación de 1000g.",
-        image: placeholder,
-        price: "₡6.500"
-      },
-      {
-        id: "miel-cruda-panal-550g",
-        name: "Miel Cruda con Panal 550g",
-        description: "Miel que no ha sido calentada con panal incluido. Presentación de 550g.",
-        image: placeholder,
-        price: "₡5.500"
-      },
-      {
-        id: "miel-cruda-350g",
-        name: "Miel Cruda 350g",
-        description: "Miel que no ha sido calentada, conservando todas sus propiedades naturales. Presentación de 350g.",
-        image: placeholder,
-        price: "₡3.500"
-      },
-      {
-        id: "miel-cruda-panal-1000g",
-        name: "Miel Cruda con Panal 1000g",
-        description: "Miel que no ha sido calentada con panal incluido. Presentación de 1000g.",
-        image: placeholder,
-        price: "₡8.500"
-      },
-      {
-        id: "nucleos-abejas",
-        name: "Núcleos de Abejas",
-        description: "Núcleos con 5 panales de abeja y con 5 marcos alambrados para desarrollarla.",
-        image: placeholder,
-        price: "₡80.000"
-      },
-      {
-        id: "reinas-apareadas",
-        name: "Reinas Apareadas",
-        description: "Reinas apareadas listas para establecer nuevas colonias.",
-        image: placeholder,
-        price: "₡10.000"
-      },
-      {
-        id: "reinas-virgenes",
-        name: "Reinas Vírgenes",
-        description: "Reinas vírgenes para establecimiento de colonias.",
-        image: placeholder,
-        price: "₡4.000"
-      },
-      {
-        id: "alveolos",
-        name: "Alvéolos",
-        description: "Alvéolos para el desarrollo de las colmenas.",
-        image: placeholder,
-        price: "₡3.000"
-      },
-      {
-        id: "propoleo-30ml",
-        name: "Propóleo 30ml",
-        description: "Propóleo natural en presentación de 30ml con todas sus propiedades medicinales.",
-        image: placeholder,
-        price: "₡6.500"
-      },
-      {
-        id: "miel-mariolita-35g",
-        name: "Miel de Mariolita 35g",
-        description: "Miel de abejas sin aguijón (mariolitas) en presentación de 35g.",
-        image: placeholder,
+        id: "goteros-mariolita-40g",
+        name: "Goteros Mariolita 40g",
+        description: "Goteros de mariolita, presentación 40 g.",
+  image: require("../assets/images/api-g/products/Goteros_mariolita.jpeg"),
         price: "₡7.000"
       },
       {
-        id: "cajas-colmenas",
-        name: "Cajas para Colmenas",
-        description: "Cajas con 10 marcos alambrados y tapa piso para colmenas.",
-        image: placeholder,
-        price: "₡35.000"
+        id: "goteros-mariolita-20g",
+        name: "Goteros Mariolita 20g",
+        description: "Goteros de mariolita, presentación 20 g.",
+  image: require("../assets/images/api-g/products/Goteros_mariolita.jpeg"),
+        price: "₡3.500"
       },
       {
-        id: "marcos-colmenas",
-        name: "Marcos para Colmenas",
-        description: "Marcos individuales alambrados para colmenas.",
-        image: placeholder,
-        price: "₡1.500"
+        id: "goteros-propoleo-35g",
+        name: "Goteros de Propóleo 35g",
+        description: "Goteros de propóleo, presentación 35 g.",
+  image: require("../assets/images/api-g/products/Goteros-de-propóleo.jpeg"),
+        price: "₡6.500"
       },
       {
-        id: "tapas-colmenas",
-        name: "Tapas para Colmenas",
-        description: "Tapas individuales para colmenas.",
-        image: placeholder,
-        price: "₡5.000"
+        id: "goteros-propoleo-15g",
+        name: "Goteros de Propóleo 15g",
+        description: "Goteros de propóleo, presentación 15 g.",
+  image: require("../assets/images/api-g/products/Goteros-de-propóleo.jpeg"),
+        price: "₡3.500"
       },
       {
-        id: "burras-colmenas",
-        name: "Burras para Colmenas",
-        description: "Burras para el soporte de colmenas.",
-        image: placeholder,
-        price: "₡12.000"
+        id: "miel-liquida-275g",
+        name: "Miel Líquida 275g",
+        description: "Miel líquida en presentación 275 g.",
+  image: require("../assets/images/api-g/products/Miel-líquida-275g.jpeg"),
+        price: "₡3.000"
       },
       {
-        id: "techos-colmenas",
-        name: "Techos para Colmenas",
-        description: "Techos para protección de colmenas.",
-        image: placeholder,
-        price: "₡15.000"
+        id: "miel-liquida-1400g",
+        name: "Miel Líquida 1400g",
+        description: "Miel líquida en presentación 1400 g.",
+  image: require("../assets/images/api-g/products/Miel-líquida-1400g.jpeg"),
+        price: "₡9.000"
+      },
+      {
+        id: "miel-liquida-1000g",
+        name: "Miel Líquida 1000g",
+        description: "Miel líquida en presentación 1000 g.",
+  image: require("../assets/images/api-g/products/Miel-líquida-1000g.jpeg"),
+        price: "₡7.000"
+      },
+      {
+        id: "miel-cremada-250g",
+        name: "Miel Cremada 250g",
+        description: "Miel cremada en presentación 250 g.",
+  image: require("../assets/images/api-g/products/Miel-cremada-250g.jpeg"),
+        price: "₡4.000"
+      },
+      {
+        id: "saquito-empaque-miel",
+        name: "Saquito de Empaque para Miel",
+        description: "Saquito de empaque para la miel.",
+  image: require("../assets/images/api-g/products/Saquito-miel.jpeg"),
+        price: "₡500"
+      },
+      {
+        id: "reinas-cordovan-alveolo",
+        name: "Reinas Cordovan en Alvéolo",
+        description: "Reinas cordovan en alveolo.",
+  image: require("../assets/images/api-g/products/Reinas-cordovan.jpeg"),
+        price: "₡3.000"
+      },
+      {
+        id: "cajas-estandar-langstroth",
+        name: "Cajas Estándar Langstroth",
+        description: "Cajas estándar Langstroth.",
+  image: require("../assets/images/api-g/products/Cajas-langstroth.jpeg"),
+        price: "₡10.000"
+      },
+      {
+        id: "cajas-abejas-sin-aguijon",
+        name: "Cajas para Abejas sin Aguijón",
+        description: "Cajas para abejas sin aguijón — precios desde ₡30.000 según diseño.",
+  image: require("../assets/images/api-g/products/Cajas-para-abejas.jpeg"),
+        price: "Desde ₡30.000"
+      },
+      {
+        id: "atrayente-abejas-sin-aguijon",
+        name: "Atrayente para Abejas sin Aguijón",
+        description: "Atrayente para atraer abejas sin aguijón.",
+  image: require("../assets/images/api-g/products/Atrayente-para-abejas.jpeg"),
+        price: "₡10.000"
       }
     ],
     tours: [
@@ -533,6 +536,15 @@ export const businessesData: Business[] = [
         url: require("../assets/images/api-g/visita_api.JPG"),
         name: "Visita al apiario"
       }
+      ,
+      {
+        url: require("../assets/images/api-g/colmena_explicacion.JPG"),
+        name: "Explicación del funcionamiento de una colmena"
+      },
+      {
+        url: require("../assets/images/api-g/abejas_reina.JPG"),
+        name: "Explicación sobre la abeja reina"
+      }
     ],
     videos: [
       {
@@ -557,7 +569,9 @@ export const businessesData: Business[] = [
       address: "50 metros este de Agroservicio La Poderosa y 50 metros sur, La Lucha de Sabalito, Puntarenas"
     },
     socialMedia: {
-      facebook: "https://www.facebook.com/ApiG"
+      whatsapp: "+506 8794-4945",
+      facebook: "https://www.facebook.com/people/Api-G/100094106944689/?rdid=KDaw4iwqpSBc1g97&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FGjCgjQkx%2F",
+      instagram: "https://www.instagram.com/api_.g?igsh=cmI5cG0zZnBzbmpt",
     }
   },
   {
@@ -581,65 +595,45 @@ export const businessesData: Business[] = [
     ],
     tours: [
       {
-        id: "tour-cafe-futuro",
-        name: "Tour de Café (En desarrollo)",
-        description: "Tour planificado que incluirá un recorrido por la finca cafetalera y una degustación de café acompañada de un desayuno típico costarricense.",
-        image: placeholder,
-        price: "En desarrollo",
-        status: "Próximamente disponible"
+        id: "tour-completo",
+        name: "Tour de Café y Experiencias Locales",
+        description: "Tour de café, avistamiento de aves, senderismo, historia del proyecto de café y de cómo se formó la comunidad de San Miguel. Se ofrecerá un café producido en la finca y un plato típico de la zona (Ejemplo: Picadillo de arracache, picadillo de plátano verde o de papaya).",
+        image: require("../assets/images/finca-zamoraFallas/senderoLaMontana.JPG"),
+        price: "$50 por persona",
+        duration: "3-4 horas",
       }
     ],
     images: [
-      {
-        url: require("../assets/images/finca-zamoraFallas/finca.JPG"),
-        name: "Finca Certificada"
-      },
-      {
-        url: require("../assets/images/finca-zamoraFallas/cafetal.JPG"),
-        name: "Plantación de café"
-      },
-      {
-        url: require("../assets/images/finca-zamoraFallas/duenos.JPG"),
-        name: "Dueños de la finca"
-      },
-      {
-        url: require("../assets/images/finca-zamoraFallas/sendero.JPG"),
-        name: "Sendero principal"
-      },
-      {
-        url: require("../assets/images/finca-zamoraFallas/senderoLaMontana.JPG"),
-        name: "Sendero La Montaña"
-      },
-      {
-        url: require("../assets/images/finca-zamoraFallas/cafe_floreado.jpg"),
-        name: "Mata de café floreado"
-      },
-      {
-        url: require("../assets/images/finca-zamoraFallas/mata_cafe.jpg"),
-        name: "Mata de café en temporada de cosecha"
-      },
-      {
-        url: require("../assets/images/finca-zamoraFallas/recolecta.jpg"),
-        name: "Recolecta de café en temporada"
-      },
+      { url: require("../assets/images/finca-zamoraFallas/finca.JPG"), name: "Finca Certificada" },
+      { url: require("../assets/images/finca-zamoraFallas/cafetal.JPG"), name: "Plantación de café" },
+      { url: require("../assets/images/finca-zamoraFallas/cafe_floreado.jpg"), name: "Café floreado" },
+      { url: require("../assets/images/finca-zamoraFallas/cafeParaRecoger.jpeg"), name: "Café para recoger" },
+      { url: require("../assets/images/finca-zamoraFallas/duenos.JPG"), name: "Dueños de la finca" },
+      { url: require("../assets/images/finca-zamoraFallas/estudiantesUNA.jpeg"), name: "Estudiantes de la Universidad Nacional de visita por la finca" },
+      { url: require("../assets/images/finca-zamoraFallas/indigenas.jpeg"), name: "Comunidades indígenas trasladadas a la finca en temporada de cosecha" },
+      { url: require("../assets/images/finca-zamoraFallas/indigenasCosecha.jpeg"), name: "Comunidades indígenas en recolecta de café" },
+      { url: require("../assets/images/finca-zamoraFallas/inicioCosella.jpeg"), name: "Inicio de la cosecha" },
+      { url: require("../assets/images/finca-zamoraFallas/logo.jpg"), name: "Logo de la finca" },
+      { url: require("../assets/images/finca-zamoraFallas/mataCafeCosecha.jpeg"), name: "Mata de café en cosecha" },
+      { url: require("../assets/images/finca-zamoraFallas/mata_cafe.jpg"), name: "Mata de café" },
+      { url: require("../assets/images/finca-zamoraFallas/plantacionSemillaCafe.jpeg"), name: "Plantación - semillas" },
+      { url: require("../assets/images/finca-zamoraFallas/produccion.jpeg"), name: "Proceso de producción" },
+      { url: require("../assets/images/finca-zamoraFallas/productorCafe.jpeg"), name: "Productor de café" },
+      { url: require("../assets/images/finca-zamoraFallas/recolecta.jpg"), name: "Recolecta de café" },
+      { url: require("../assets/images/finca-zamoraFallas/sendero.JPG"), name: "Sendero principal" },
+      { url: require("../assets/images/finca-zamoraFallas/senderoLaMontana.JPG"), name: "Sendero La Montaña" },
+      { url: require("../assets/images/finca-zamoraFallas/senderoPasillo.JPG"), name: "Pasillo del sendero" },
+      { url: require("../assets/images/finca-zamoraFallas/banderaAzulEcologica.jpeg"), name: "Bandera Azul Ecológica" },
     ],
-    videos: [
-      {
-        id: "finca-zamora-presentacion",
-        name: "Finca Zamora y Fallas",
-        description: "Descubre nuestra tradición cafetalera de más de 60 años",
-        url: videoFincaZamoraFallas,
-        thumbnail: logoFincaZamora
-      }
-    ],
+    videos: [],
     location: { lat: 8.865747908947986, lng: -82.88051262725706 },
     contactInfo: {
       email: "fincazamorayfallas@gmail.com",
       phone: "+506 8825-8659",
-      address: "San Miguel de Sabalito, Coto Brus"
+      address: "San Miguel de Sabalito, Coto Brus, Puntarenas"
     },
     socialMedia: {
-      facebook: ""
+      whatsapp: "+506 8825 8659"
     }
   },
   {
@@ -654,46 +648,25 @@ export const businessesData: Business[] = [
     type: BusinessType.HONEY,
     products: [
       {
-        id: "miel-jicota",
-        name: "Miel de Jicota (Apis)",
-        description: "Miel producida por abejas jicota (Apis mellifera), de excelente calidad y sabor tradicional.",
+        id: "mieles-santa-lucia-botella-350ml",
+        name: "Botella 350ml",
+        description: "Miel en botella - presentación 350 ml.",
         image: placeholder,
-        price: "Consultar precio"
+        price: "₡2.700"
       },
       {
-        id: "miel-mariola",
-        name: "Miel de Mariola",
-        description: "Miel artesanal producida por abejas mariolas (sin aguijón), con propiedades únicas y sabor distintivo.",
+        id: "mieles-santa-lucia-botella-750ml",
+        name: "Botella 750ml",
+        description: "Miel en botella - presentación 750 ml.",
         image: placeholder,
-        price: "Consultar precio"
+        price: "₡5.500"
       },
       {
-        id: "miel-barcino",
-        name: "Miel de Barcino",
-        description: "Miel especializada producida por abejas barcino, especie nativa con características particulares.",
+        id: "propoleo-25ml",
+        name: "Propóleo 25ml",
+        description: "Propóleo puro en presentación de 25 ml.",
         image: placeholder,
-        price: "Consultar precio"
-      },
-      {
-        id: "propoleo-puro",
-        name: "Propóleo",
-        description: "Propóleo puro con todas sus propiedades medicinales y terapéuticas naturales.",
-        image: placeholder,
-        price: "Consultar precio"
-      },
-      {
-        id: "propomiel",
-        name: "Propomiel",
-        description: "Miel enriquecida con 2oz de propóleo puro, combinando los beneficios de ambos productos naturales.",
-        image: placeholder,
-        price: "Consultar precio"
-      },
-      {
-        id: "cafe-beneficio",
-        name: "Café",
-        description: "Café de la zona cafetalera, vendido al beneficio local. Tradición familiar en cultivo de café.",
-        image: placeholder,
-        price: "Consultar precio"
+        price: "₡5.000"
       }
     ],
     images: [
@@ -702,9 +675,25 @@ export const businessesData: Business[] = [
         name: "Colmena de abejas"
       },
       {
-        url: require("../assets/images/mieles-santa-lucia/panal.JPG"),
-        name: "Panal de abejas"
+        url: require("../assets/images/mieles-santa-lucia/entrevista-publicidad.JPG"),
+        name: "Entrevista brindada para video publicitario"
       },
+      {
+        url: require("../assets/images/mieles-santa-lucia/mieles-santaLucia-logo.jpeg"),
+        name: "Logo de la empresa"
+      },
+      {
+        url: require("../assets/images/mieles-santa-lucia/mieles.JPG"),
+        name: "Envasado de la miel para su posterior venta"
+      },
+      {
+        url: require("../assets/images/mieles-santa-lucia/panal-mariola.JPG"),
+        name: "Colmenas de abejas mariola"
+      },
+      {
+        url: require("../assets/images/mieles-santa-lucia/panal.JPG"),
+        name: "Entrada de la colmena de abejas mariola"
+      }
     ],
     videos: [
       {
@@ -717,12 +706,12 @@ export const businessesData: Business[] = [
     ],
     location: { lat: 8.884404134646255, lng: -82.81861105198229 },
     contactInfo: {
-      email: "merardocrack2512@gmail.com",
+      email: "luciafallas2004@gmail.com",
       phone: "+506 8515-9413",
       address: "500 metros al suroeste del Colegio Jorge Volio Jiménez"
     },
     socialMedia: {
-      facebook: ""
+      whatsapp: "+506 8515 9413"
     }
   },
   {

@@ -105,8 +105,8 @@ const BusinessProductsCatalog: React.FC = () => {
                 </div>
               </StaggerContainer><Modal isOpen={!!modalProduct} onClose={() => setModalProduct(null)}>
                 {modalProduct && (
-                  <div className="w-full max-w-xs mx-auto flex flex-col items-center bg-white rounded-2xl shadow-2xl p-6 border border-primary/20">
-                    <div className="w-40 h-40 mb-4 mx-auto rounded-xl overflow-hidden border-2 border-primary/20 shadow">
+                  <div className="w-full max-w-md mx-auto flex flex-col items-center bg-white rounded-2xl shadow-2xl p-6 border border-primary/20">
+                    <div className="w-full h-96 mb-4 mx-auto rounded-xl overflow-hidden border-2 border-primary/20 shadow">
                       <LazyImage
                         src={Array.isArray(modalProduct.image)
                           ? modalProduct.image[0]
