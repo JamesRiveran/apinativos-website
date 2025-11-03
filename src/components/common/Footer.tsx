@@ -150,7 +150,26 @@ const Footer: React.FC = () => {
                   </svg>
                 </a>
               )}
-
+              {socialMedia.tiktok && (
+                <a
+                  href={socialMedia.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent flex items-center space-x-1"
+                  title="TikTok"
+                >
+                  <span className="sr-only">TikTok</span>
+                  <svg
+                    className="h-6 w-6"
+                    viewBox="0 0 256 256"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path d="M170.2 32v81.3a42.7 42.7 0 11-42.7-42.7V80a64 64 0 1064 64V32h21.5V6H170.2z" fill="currentColor" />
+                  </svg>
+                </a>
+              )}
               {socialMedia.instagram && (
                 <a
                   href={socialMedia.instagram}
@@ -172,6 +191,8 @@ const Footer: React.FC = () => {
                   </svg>
                 </a>
               )}
+
+              
 
               {socialMedia.twitter && (
                 <a
