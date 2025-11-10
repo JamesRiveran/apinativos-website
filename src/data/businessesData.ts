@@ -5,6 +5,7 @@ import logoApiZaid from '../assets/images/api-zaid/api-zaid-logo.jpeg';
 import logoCafeLaMarcela from '../assets/images/cafe-la-marcela/cafe_la_marcela_logo.png';
 import logoFincaZamora from '../assets/images/finca-zamoraFallas/logo.jpg';
 import logoApiG from '../assets/images/api-g/logo.jpg';
+import logoJessy from '../assets/images/reposteria-jessy/logo_jessy.png';
 
 import videoApiZaid from '../assets/images/api-zaid/videos/api-zaid.mp4';
 import videoApiG from '../assets/images/api-g/videos/api-g.mp4';
@@ -85,7 +86,7 @@ export const businessesData: Business[] = [
         name: "Miel Artesanal",
         description:
           "Miel pura producida en la finca y por productores aliados. Presentaciones: 1L ₡6.000, 750g ₡5.000, 500g ₡3.750, 250g ₡1.600, 100g ₡3.000.",
-  image: require("../assets/images/finca-ecologica-don-juan/logo.jpg"),
+        image: require("../assets/images/finca-ecologica-don-juan/logo.jpg"),
         price: "Desde ₡1.600"
       }
     ],
@@ -135,7 +136,7 @@ export const businessesData: Business[] = [
     soda: {
       description:
         "La alimentación se ofrece durante los tours, pero no está incluida en el precio. Desayunos entre ₡2.000 y ₡2.500, almuerzos tipo casado entre ₡3.000 y ₡3.500. Se utiliza queso, natilla y ocasionalmente carne de cerdo producida en la finca.",
-  image: require("../assets/images/finca-ecologica-don-juan/logo.jpg")
+      image: require("../assets/images/finca-ecologica-don-juan/photos/soda.JPG")
     },
     artesanias: {
       description: "Próximamente contaremos con una sección de artesanías en colaboración con ApiNativos.",
@@ -146,49 +147,49 @@ export const businessesData: Business[] = [
         id: "lacteos-don-juan-presentacion",
         name: "Finca Ecológica Don Juan",
         description: "Conoce nuestro proceso de producción láctea y tours ecológicos",
-        url: videoFincaEcologicaDonJuan, 
+        url: videoFincaEcologicaDonJuan,
         thumbnail: logo
       }
     ],
     images: [
       {
-        url: require("../assets/images/finca-ecologica-don-juan/bosque.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/bosque.JPG"),
         name: "Bosque"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/dueño.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/dueño.JPG"),
         name: "Dueño de la finca"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/entrada_sendero.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/entrada_sendero.JPG"),
         name: "Entrada al sendero"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/entrevista.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/entrevista.JPG"),
         name: "Entrevistas"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/sendero.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/sendero.JPG"),
         name: "Sendero ecológico"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/soda_entrada.jpg"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/soda_entrada.jpg"),
         name: "Entrada de la soda"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/soda.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/soda.JPG"),
         name: "Soda Don Juan"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/zonasRecreacion.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/zonasRecreacion.JPG"),
         name: "Zonas de recreación"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/senderos.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/senderos.JPG"),
         name: "Senderos Ecológicos"
       },
       {
-        url: require("../assets/images/finca-ecologica-don-juan/tour.JPG"),
+        url: require("../assets/images/finca-ecologica-don-juan/photos/tour.JPG"),
         name: "Tour en la finca"
       },
     ],
@@ -261,15 +262,15 @@ export const businessesData: Business[] = [
     ],
     images: [
       {
-        url: require("../assets/images/cafe-la-marcela/premio.JPG"),
+        url: require("../assets/images/cafe-la-marcela/photos/premio.JPG"),
         name: "Primer Lugar de Feria de Café Zona Alta de Sabalito"
       },
       {
-        url: require("../assets/images/cafe-la-marcela/entrevista.JPG"),
+        url: require("../assets/images/cafe-la-marcela/photos/entrevista.JPG"),
         name: "Entrevista para video publicitario"
       },
       {
-        url: require("../assets/images/cafe-la-marcela/entrevistas.JPG"),
+        url: require("../assets/images/cafe-la-marcela/photos/entrevistas.JPG"),
         name: "Entrevista con encargada"
       },
     ],
@@ -336,19 +337,19 @@ export const businessesData: Business[] = [
     ],
     images: [
       {
-        url: require("../assets/images/api-zaid/entrevistas.JPG"),
+        url: require("../assets/images/api-zaid/photos/entrevistas.JPG"),
         name: "Entrevistas"
       },
       {
-        url: require("../assets/images/api-zaid/miel_general.JPG"),
+        url: require("../assets/images/api-zaid/photos/miel_general.JPG"),
         name: "Produtos de miel en general"
       },
       {
-        url: require("../assets/images/api-zaid/entrevista.JPG"),
+        url: require("../assets/images/api-zaid/photos/entrevista.JPG"),
         name: "Entrevista con encargada"
       },
       {
-        url: require("../assets/images/api-zaid/miel.JPG"),
+        url: require("../assets/images/api-zaid/photos/miel.JPG"),
         name: "Presentación de producto"
       },
     ],
@@ -378,91 +379,91 @@ export const businessesData: Business[] = [
         id: "goteros-mariolita-40g",
         name: "Goteros Mariolita 40g",
         description: "Goteros de mariolita, presentación 40 g.",
-  image: require("../assets/images/api-g/products/Goteros_mariolita.jpeg"),
+        image: require("../assets/images/api-g/products/Goteros_mariolita.jpeg"),
         price: "₡7.000"
       },
       {
         id: "goteros-mariolita-20g",
         name: "Goteros Mariolita 20g",
         description: "Goteros de mariolita, presentación 20 g.",
-  image: require("../assets/images/api-g/products/Goteros_mariolita.jpeg"),
+        image: require("../assets/images/api-g/products/Goteros_mariolita.jpeg"),
         price: "₡3.500"
       },
       {
         id: "goteros-propoleo-35g",
         name: "Goteros de Propóleo 35g",
         description: "Goteros de propóleo, presentación 35 g.",
-  image: require("../assets/images/api-g/products/Goteros-de-propóleo.jpeg"),
+        image: require("../assets/images/api-g/products/Goteros-de-propóleo.jpeg"),
         price: "₡6.500"
       },
       {
         id: "goteros-propoleo-15g",
         name: "Goteros de Propóleo 15g",
         description: "Goteros de propóleo, presentación 15 g.",
-  image: require("../assets/images/api-g/products/Goteros-de-propóleo.jpeg"),
+        image: require("../assets/images/api-g/products/Goteros-de-propóleo.jpeg"),
         price: "₡3.500"
       },
       {
         id: "miel-liquida-275g",
         name: "Miel Líquida 275g",
         description: "Miel líquida en presentación 275 g.",
-  image: require("../assets/images/api-g/products/Miel-líquida-275g.jpeg"),
+        image: require("../assets/images/api-g/products/Miel-líquida-275g.jpeg"),
         price: "₡3.000"
       },
       {
         id: "miel-liquida-1400g",
         name: "Miel Líquida 1400g",
         description: "Miel líquida en presentación 1400 g.",
-  image: require("../assets/images/api-g/products/Miel-líquida-1400g.jpeg"),
+        image: require("../assets/images/api-g/products/Miel-líquida-1400g.jpeg"),
         price: "₡9.000"
       },
       {
         id: "miel-liquida-1000g",
         name: "Miel Líquida 1000g",
         description: "Miel líquida en presentación 1000 g.",
-  image: require("../assets/images/api-g/products/Miel-líquida-1000g.jpeg"),
+        image: require("../assets/images/api-g/products/Miel-líquida-1000g.jpeg"),
         price: "₡7.000"
       },
       {
         id: "miel-cremada-250g",
         name: "Miel Cremada 250g",
         description: "Miel cremada en presentación 250 g.",
-  image: require("../assets/images/api-g/products/Miel-cremada-250g.jpeg"),
+        image: require("../assets/images/api-g/products/Miel-cremada-250g.jpeg"),
         price: "₡4.000"
       },
       {
         id: "saquito-empaque-miel",
         name: "Saquito de Empaque para Miel",
         description: "Saquito de empaque para la miel.",
-  image: require("../assets/images/api-g/products/Saquito-miel.jpeg"),
+        image: require("../assets/images/api-g/products/Saquito-miel.jpeg"),
         price: "₡500"
       },
       {
         id: "reinas-cordovan-alveolo",
         name: "Reinas Cordovan en Alvéolo",
         description: "Reinas cordovan en alveolo.",
-  image: require("../assets/images/api-g/products/Reinas-cordovan.jpeg"),
+        image: require("../assets/images/api-g/products/Reinas-cordovan.jpeg"),
         price: "₡3.000"
       },
       {
         id: "cajas-estandar-langstroth",
         name: "Cajas Estándar Langstroth",
         description: "Cajas estándar Langstroth.",
-  image: require("../assets/images/api-g/products/Cajas-langstroth.jpeg"),
+        image: require("../assets/images/api-g/products/Cajas-langstroth.jpeg"),
         price: "₡10.000"
       },
       {
         id: "cajas-abejas-sin-aguijon",
         name: "Cajas para Abejas sin Aguijón",
         description: "Cajas para abejas sin aguijón — precios desde ₡30.000 según diseño.",
-  image: require("../assets/images/api-g/products/Cajas-para-abejas.jpeg"),
+        image: require("../assets/images/api-g/products/Cajas-para-abejas.jpeg"),
         price: "Desde ₡30.000"
       },
       {
         id: "atrayente-abejas-sin-aguijon",
         name: "Atrayente para Abejas sin Aguijón",
         description: "Atrayente para atraer abejas sin aguijón.",
-  image: require("../assets/images/api-g/products/Atrayente-para-abejas.jpeg"),
+        image: require("../assets/images/api-g/products/Atrayente-para-abejas.jpeg"),
         price: "₡10.000"
       }
     ],
@@ -485,64 +486,64 @@ export const businessesData: Business[] = [
     ],
     images: [
       {
-        url: require("../assets/images/api-g/apertura_colmena.JPG"),
+        url: require("../assets/images/api-g/photos/apertura_colmena.JPG"),
         name: "Apertura de colmena"
       },
       {
-        url: require("../assets/images/api-g/api.JPG"),
+        url: require("../assets/images/api-g/photos/api.JPG"),
         name: "Apiario"
       },
       {
-        url: require("../assets/images/api-g/colmenas.JPG"),
+        url: require("../assets/images/api-g/photos/colmenas.JPG"),
         name: "Colmena"
       },
       {
-        url: require("../assets/images/api-g/entrevistas.JPG"),
+        url: require("../assets/images/api-g/photos/entrevistas.JPG"),
         name: "Entrevistas"
       },
       {
-        url: require("../assets/images/api-g/interior_colmera.JPG"),
+        url: require("../assets/images/api-g/photos/interior_colmera.JPG"),
         name: "Interior de colmena"
       },
       {
-        url: require("../assets/images/api-g/miel_comena.JPG"),
+        url: require("../assets/images/api-g/photos/miel_comena.JPG"),
         name: "Miel Cruda con Panal"
       },
       {
-        url: require("../assets/images/api-g/ponel.JPG"),
+        url: require("../assets/images/api-g/photos/ponel.JPG"),
         name: "Ponel"
       },
       {
-        url: require("../assets/images/api-g/productos_general.JPG"),
+        url: require("../assets/images/api-g/photos/productos_general.JPG"),
         name: "Productos generales"
       },
       {
-        url: require("../assets/images/api-g/sendero_api.JPG"),
+        url: require("../assets/images/api-g/photos/sendero_api.JPG"),
         name: "Sendero apícola"
       },
       {
-        url: require("../assets/images/api-g/sendero_entrada.JPG"),
+        url: require("../assets/images/api-g/photos/sendero_entrada.JPG"),
         name: "Entrada al sendero"
       },
       {
-        url: require("../assets/images/api-g/sendero.JPG"),
+        url: require("../assets/images/api-g/photos/sendero.JPG"),
         name: "Sendero"
       },
       {
-        url: require("../assets/images/api-g/tour__explicacion.JPG"),
+        url: require("../assets/images/api-g/photos/tour__explicacion.JPG"),
         name: "Tour explicado"
       },
       {
-        url: require("../assets/images/api-g/visita_api.JPG"),
+        url: require("../assets/images/api-g/photos/visita_api.JPG"),
         name: "Visita al apiario"
       }
       ,
       {
-        url: require("../assets/images/api-g/colmena_explicacion.JPG"),
+        url: require("../assets/images/api-g/photos/colmena_explicacion.JPG"),
         name: "Explicación del funcionamiento de una colmena"
       },
       {
-        url: require("../assets/images/api-g/abejas_reina.JPG"),
+        url: require("../assets/images/api-g/photos/abejas_reina.JPG"),
         name: "Explicación sobre la abeja reina"
       }
     ],
@@ -598,32 +599,32 @@ export const businessesData: Business[] = [
         id: "tour-completo",
         name: "Tour de Café y Experiencias Locales",
         description: "Tour de café, avistamiento de aves, senderismo, historia del proyecto de café y de cómo se formó la comunidad de San Miguel. Se ofrecerá un café producido en la finca y un plato típico de la zona (Ejemplo: Picadillo de arracache, picadillo de plátano verde o de papaya).",
-        image: require("../assets/images/finca-zamoraFallas/senderoLaMontana.JPG"),
+        image: require("../assets/images/finca-zamoraFallas/photos/senderoLaMontana.JPG"),
         price: "$50 por persona",
         duration: "3-4 horas",
       }
     ],
     images: [
-      { url: require("../assets/images/finca-zamoraFallas/finca.JPG"), name: "Finca Certificada" },
-      { url: require("../assets/images/finca-zamoraFallas/cafetal.JPG"), name: "Plantación de café" },
-      { url: require("../assets/images/finca-zamoraFallas/cafe_floreado.jpg"), name: "Café floreado" },
-      { url: require("../assets/images/finca-zamoraFallas/cafeParaRecoger.jpeg"), name: "Café para recoger" },
-      { url: require("../assets/images/finca-zamoraFallas/duenos.JPG"), name: "Dueños de la finca" },
-      { url: require("../assets/images/finca-zamoraFallas/estudiantesUNA.jpeg"), name: "Estudiantes de la Universidad Nacional de visita por la finca" },
-      { url: require("../assets/images/finca-zamoraFallas/indigenas.jpeg"), name: "Comunidades indígenas trasladadas a la finca en temporada de cosecha" },
-      { url: require("../assets/images/finca-zamoraFallas/indigenasCosecha.jpeg"), name: "Comunidades indígenas en recolecta de café" },
-      { url: require("../assets/images/finca-zamoraFallas/inicioCosella.jpeg"), name: "Inicio de la cosecha" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/finca.JPG"), name: "Finca Certificada" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/cafetal.JPG"), name: "Plantación de café" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/cafe_floreado.jpg"), name: "Café floreado" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/cafeParaRecoger.jpeg"), name: "Café para recoger" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/duenos.JPG"), name: "Dueños de la finca" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/estudiantesUNA.jpeg"), name: "Estudiantes de la Universidad Nacional de visita por la finca" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/indigenas.jpeg"), name: "Comunidades indígenas trasladadas a la finca en temporada de cosecha" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/indigenasCosecha.jpeg"), name: "Comunidades indígenas en recolecta de café" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/inicioCosella.jpeg"), name: "Inicio de la cosecha" },
       { url: require("../assets/images/finca-zamoraFallas/logo.jpg"), name: "Logo de la finca" },
-      { url: require("../assets/images/finca-zamoraFallas/mataCafeCosecha.jpeg"), name: "Mata de café en cosecha" },
-      { url: require("../assets/images/finca-zamoraFallas/mata_cafe.jpg"), name: "Mata de café" },
-      { url: require("../assets/images/finca-zamoraFallas/plantacionSemillaCafe.jpeg"), name: "Plantación - semillas" },
-      { url: require("../assets/images/finca-zamoraFallas/produccion.jpeg"), name: "Proceso de producción" },
-      { url: require("../assets/images/finca-zamoraFallas/productorCafe.jpeg"), name: "Productor de café" },
-      { url: require("../assets/images/finca-zamoraFallas/recolecta.jpg"), name: "Recolecta de café" },
-      { url: require("../assets/images/finca-zamoraFallas/sendero.JPG"), name: "Sendero principal" },
-      { url: require("../assets/images/finca-zamoraFallas/senderoLaMontana.JPG"), name: "Sendero La Montaña" },
-      { url: require("../assets/images/finca-zamoraFallas/senderoPasillo.JPG"), name: "Pasillo del sendero" },
-      { url: require("../assets/images/finca-zamoraFallas/banderaAzulEcologica.jpeg"), name: "Bandera Azul Ecológica" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/mataCafeCosecha.jpeg"), name: "Mata de café en cosecha" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/mata_cafe.jpg"), name: "Mata de café" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/plantacionSemillaCafe.jpeg"), name: "Plantación - semillas" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/produccion.jpeg"), name: "Proceso de producción" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/productorCafe.jpeg"), name: "Productor de café" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/recolecta.jpg"), name: "Recolecta de café" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/sendero.JPG"), name: "Sendero principal" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/senderoLaMontana.JPG"), name: "Sendero La Montaña" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/senderoPasillo.JPG"), name: "Pasillo del sendero" },
+      { url: require("../assets/images/finca-zamoraFallas/photos/banderaAzulEcologica.jpeg"), name: "Bandera Azul Ecológica" },
     ],
     videos: [],
     location: { lat: 8.865747908947986, lng: -82.88051262725706 },
@@ -671,27 +672,27 @@ export const businessesData: Business[] = [
     ],
     images: [
       {
-        url: require("../assets/images/mieles-santa-lucia/colmena.JPG"),
+        url: require("../assets/images/mieles-santa-lucia/photos/colmena.JPG"),
         name: "Colmena de abejas"
       },
       {
-        url: require("../assets/images/mieles-santa-lucia/entrevista-publicidad.JPG"),
+        url: require("../assets/images/mieles-santa-lucia/photos/entrevista-publicidad.JPG"),
         name: "Entrevista brindada para video publicitario"
       },
       {
-        url: require("../assets/images/mieles-santa-lucia/mieles-santaLucia-logo.jpeg"),
+        url: require("../assets/images/mieles-santa-lucia/photos/mieles-santaLucia-logo.jpeg"),
         name: "Logo de la empresa"
       },
       {
-        url: require("../assets/images/mieles-santa-lucia/mieles.JPG"),
+        url: require("../assets/images/mieles-santa-lucia/photos/mieles.JPG"),
         name: "Envasado de la miel para su posterior venta"
       },
       {
-        url: require("../assets/images/mieles-santa-lucia/panal-mariola.JPG"),
+        url: require("../assets/images/mieles-santa-lucia/photos/panal-mariola.JPG"),
         name: "Colmenas de abejas mariola"
       },
       {
-        url: require("../assets/images/mieles-santa-lucia/panal.JPG"),
+        url: require("../assets/images/mieles-santa-lucia/photos/panal.JPG"),
         name: "Entrada de la colmena de abejas mariola"
       }
     ],
@@ -717,8 +718,8 @@ export const businessesData: Business[] = [
   {
     id: "pasteleria-reposteria-jessy",
     name: "Repostería Jessy",
-    logo: placeholder,
-    backgroundImage: placeholder,
+    logo: logoJessy,
+    backgroundImage: logoJessy,
     shortDescription:
       "Pastelería y Repostería Jessy nació del amor por crear postres únicos. Comenzó vendiendo esporádicamente a los vecinos, motivada por su pareja a emprender con la famosa torta chilena que fue todo un éxito. Hoy cuenta con 25 tipos de postres diferentes.",
     longDescription:
@@ -726,101 +727,224 @@ export const businessesData: Business[] = [
     type: BusinessType.BAKERY,
     products: [
       {
-        id: "torta-chilena",
-        name: "Torta Chilena",
-        description: "La especialidad de la casa que marcó el inicio del emprendimiento. Un clásico que conquistó a los primeros clientes.",
-        image: placeholder,
-        price: "Consultar precio"
+        id: "queque-normal",
+        name: "Queque Normal",
+        description: "Vainilla relleno de dulce de leche.",
+        image: require("../assets/images/reposteria-jessy/products/quequeNormal.jpeg"),
+        price: "Varía según decoración"
       },
       {
-        id: "carlota",
-        name: "Carlota",
-        description: "Deliciosa carlota preparada con ingredientes frescos y la receta tradicional.",
-        image: placeholder,
-        price: "Consultar precio"
+        id: "queque-humedo",
+        name: "Queque Húmedo",
+        description: "Vainilla relleno de dulce de leche. Húmedo en las tres leches.",
+        image: require("../assets/images/reposteria-jessy/products/quequeHumedo.jpeg"),
+        price: "Varía según decoración"
       },
       {
-        id: "tres-leches",
-        name: "Tres Leches",
-        description: "Clásico pastel tres leches, suave y cremoso, perfecto para cualquier ocasión.",
+        id: "queque-zanahoria",
+        name: "Queque Zanahoria",
+        description: "Pan de zanahoria con relleno de crema de queso crema.",
+        image: require("../assets/images/reposteria-jessy/products/quequeZanahoria.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "queque-borracho",
+        name: "Queque Borracho",
+        description: "Vainilla relleno de dulce de leche, húmedo en tres leches y cargado de licor.",
         image: placeholder,
-        price: "Consultar precio"
+        price: "Varía según decoración"
+      },
+      {
+        id: "queque-chocolate",
+        name: "Queque Chocolate",
+        description: "Chocolate con relleno de chocolate y mermelada de mora o fresa.",
+        image: require("../assets/images/reposteria-jessy/products/quequeChocolate.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "queque-chocolate-con-chocolate",
+        name: "Queque de Chocolate con Chocolate",
+        description: "Chocolate con relleno de chocolate y cobertura de chocolate.",
+        image: require("../assets/images/reposteria-jessy/products/chocolateConChocolate.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "queque-chocolate-humedo",
+        name: "Queque de Chocolate Húmedo",
+        description: "Chocolate con relleno de chocolate húmedo en chocolate líquido.",
+        image: require("../assets/images/reposteria-jessy/products/chocolateHumedo.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "carlota-melocoton",
+        name: "Carlota de Melocotón",
+        description: "2 bizcochos delgados húmedos en tres leches, relleno grueso de crema de melocotón con trocitos de melocotón y galleta.",
+        image: require("../assets/images/reposteria-jessy/products/carlota.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "carlota-fresa",
+        name: "Carlota de Fresa",
+        description: "2 bizcochos delgados húmedos en tres leches, relleno grueso de crema de fresa con trocitos de fresa y galleta.",
+        image: placeholder,
+        price: "Varía según decoración"
+      },
+      {
+        id: "carlota-frutas",
+        name: "Carlota de Frutas",
+        description: "2 bizcochos delgados húmedos en tres leches, relleno grueso de crema de frutas con trocitos de frutas combinadas y galleta.",
+        image: placeholder,
+        price: "Varía según decoración"
       },
       {
         id: "torta-fria",
         name: "Torta Fría",
-        description: "Refrescante torta fría, ideal para días calurosos y celebraciones especiales.",
+        description: "Queque húmedo con relleno fino y frutas combinadas.",
+        image: require("../assets/images/reposteria-jessy/products/tortaFria.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "torta-napolitana",
+        name: "Torta Napolitana",
+        description: "Panes húmedos en chocolate, vainilla y fresa. Crema de fresa, chocolate y vainilla.",
         image: placeholder,
-        price: "Consultar precio"
+        price: "Varía según decoración"
+      },
+      {
+        id: "tiramisu",
+        name: "Tiramisú",
+        description: "Postre clásico cuyo ingrediente principal es el café.",
+        image: require("../assets/images/reposteria-jessy/products/tiramisu.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "torta-chilena",
+        name: "Torta Chilena",
+        description: "15 capas de pasta original y 15 rellenos de dulce de leche.",
+        image: require("../assets/images/reposteria-jessy/products/tortaChilena.JPG"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "tres-leches",
+        name: "Tres Leches",
+        description: "Bizcocho esponja con chantilly, flotando en tres leches con un toque de licor.",
+        image: require("../assets/images/reposteria-jessy/products/tresLeches.jpeg"),
+        price: "Varía según decoración"
       },
       {
         id: "torta-churchill",
         name: "Torta Churchill",
-        description: "Torta Churchill con todos los sabores tradicionales costarricenses.",
-        image: placeholder,
-        price: "Consultar precio"
+        description: "Tres bizcochos húmedos en sirope y tres leches. Dos rellenos de crema de helado a tu gusto con barquillos, leche condensada y leche en polvo.",
+        image: require("../assets/images/reposteria-jessy/products/tortaChurchill.jpeg"),
+        price: "Varía según decoración"
       },
       {
-        id: "pasteles-eventos",
-        name: "Pasteles para Eventos",
-        description: "Pasteles personalizados para bodas, cumpleaños y eventos especiales. Diseños únicos hechos con amor.",
+        id: "torta-baileys",
+        name: "Torta Baileys",
+        description: "Pan lustre con relleno a base de Baileys.",
         image: placeholder,
-        price: "Consultar precio"
+        price: "Varía según decoración"
       },
       {
-        id: "bocadillos-dulces",
-        name: "Bocadillos Dulces",
-        description: "Variedad de bocadillos dulces perfectos para acompañar el café o como merienda.",
+        id: "torta-whisky",
+        name: "Torta Whisky",
+        description: "Base delgada de pan con crema tipo irlandesa.",
         image: placeholder,
-        price: "Consultar precio"
+        price: "Varía según decoración"
       },
       {
-        id: "bocadillos-salados",
-        name: "Bocadillos Salados",
-        description: "Bocadillos salados ideales para eventos, reuniones o como aperitivos.",
-        image: placeholder,
-        price: "Consultar precio"
+        id: "torta-chilena-cereal",
+        name: "Torta Chilena con Cereal",
+        description: "15 capas de pasta original y 15 rellenos de dulce de leche con cobertura de leche condensada y cereal.",
+        image: require("../assets/images/reposteria-jessy/products/tortaChilenaCereal.jpeg"),
+        price: "Varía según decoración"
       },
       {
-        id: "queques-enteros",
-        name: "Queques Enteros",
-        description: "Queques completos en diferentes sabores, perfectos para compartir en familia.",
-        image: placeholder,
-        price: "Consultar precio"
+        id: "explosion-de-chocolate",
+        name: "Explosión de Chocolate",
+        description: "Pan de chocolate con relleno de chocolate líquido que se desborda al partir; cobertura de chocolate.",
+        image: require("../assets/images/reposteria-jessy/products/explosionChocolate.jpeg"),
+        price: "Varía según decoración"
       },
       {
-        id: "queques-individuales",
-        name: "Queques Individuales",
-        description: "Porciones individuales de queque, ideales para meriendas o regalos personales.",
+        id: "cheesecake",
+        name: "Cheesecake",
+        description: "Base de galleta con crema de cheesecake y cobertura de gelatina sabor a tu gusto.",
+        image: require("../assets/images/reposteria-jessy/products/cheesecake.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "selva-negra",
+        name: "Selva Negra",
+        description: "Tres bizcochos de chocolate con dos rellenos de crema y cereza; toque de chocolate y fresa, bañado en chocolate.",
+        image: require("../assets/images/reposteria-jessy/products/selvaNegra.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "torta-opera",
+        name: "Torta Ópera",
+        description: "Tres bizcochos con rellenos de café, moka y chocolate. Húmedo con vainilla, licor de café y chocolate.",
         image: placeholder,
+        price: "Varía según decoración"
+      },
+      {
+        id: "tres-leches-pina-colada",
+        name: "Tres Leches Piña Colada",
+        description: "Bizcocho esponja con chantilly, coco, piña y cerezas. Flotando en tres leches con Malibu, leche de coco y jugo de piña.",
+        image: require("../assets/images/reposteria-jessy/products/tresLechesPiñaColada.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "tronco",
+        name: "Tronco",
+        description: "Arrollado húmedo relleno de crema, cubierto de chocolate y frutas.",
+        image: require("../assets/images/reposteria-jessy/products/tronco.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "torta-rossana",
+        name: "Torta Rossana",
+        description: "Queque húmedo con sabor a Rossana, doble relleno y cobertura de Rossana.",
+        image: require("../assets/images/reposteria-jessy/products/tortaRossana.jpeg"),
+        price: "Varía según decoración"
+      },
+      {
+        id: "queques-navidenos",
+        name: "Queques Navideños (marinado 2 meses)",
+        description: "Queques especiales con marinado de 2 meses. Disponibles en varias presentaciones/tamaños.",
+        image: require("../assets/images/reposteria-jessy/products/quequeNavidad.jpeg"),
+        price: "Desde ₡7.500 — ₡30.000 según tamaño (Pequeño: ₡7.500, Mediano: ₡11.000, Grande: ₡16.500, Extra grande: ₡21.500, Especial: ₡30.000)"
+      }
+      ,
+      {
+        id: "bocadillos-para-eventos",
+        name: "Bocadillos para Eventos",
+        description: "Elaboramos bocadillos y catering para eventos y festividades. Opciones dulces y saladas; montajes personalizados y entregas según pedido.",
+        image: require("../assets/images/reposteria-jessy/products/bocadillosEventos.jpeg"),
         price: "Consultar precio"
       }
     ],
     images: [
-      {
-        url: require("../assets/images/reposteria-jessy/entrevistas.JPG"),
-        name: "Entrevistas"
-      },
-      {
-        url: require("../assets/images/reposteria-jessy/general.JPG"),
-        name: "Pedidos bajo encargo"
-      },
-      {
-        url: require("../assets/images/reposteria-jessy/postre.JPG"),
-        name: "Tres Leches"
-      },
-      {
-        url: require("../assets/images/reposteria-jessy/productos_general.JPG"),
-        name: "Postres Secos"
-      },
-      {
-        url: require("../assets/images/reposteria-jessy/tortaChilena.JPG"),
-        name: "Torta Chilena"
-      },
-      {
-        url: require("../assets/images/reposteria-jessy/tres_leches.JPG"),
-        name: "Entregas a domicilio"
-      }
+      { url: require("../assets/images/reposteria-jessy/photos/abejaqueque.jpeg"), name: "Queque de abeja" },
+      { url: require("../assets/images/reposteria-jessy/photos/cupcake.jpeg"), name: "Cupcakes" },
+      { url: require("../assets/images/reposteria-jessy/photos/entrevistas.JPG"), name: "Entrevistas" },
+      { url: require("../assets/images/reposteria-jessy/photos/general.JPG"), name: "Tres leches" },
+      { url: require("../assets/images/reposteria-jessy/photos/postre.JPG"), name: "Postre" },
+      { url: require("../assets/images/reposteria-jessy/photos/productos_general.JPG"), name: "Torta Chilena" },
+      { url: require("../assets/images/reposteria-jessy/photos/queque.jpeg"), name: "Queque para eventos" },
+      { url: require("../assets/images/reposteria-jessy/photos/queque1.jpeg"), name: "Queque para aniversario" },
+      { url: require("../assets/images/reposteria-jessy/photos/queque15años.jpeg"), name: "Queque para 15 años" },
+      { url: require("../assets/images/reposteria-jessy/photos/queque2.jpeg"), name: "Queque de tres pisos" },
+      { url: require("../assets/images/reposteria-jessy/photos/quequeBoda.jpeg"), name: "Queque para Boda" },
+      { url: require("../assets/images/reposteria-jessy/photos/quequeBoda1.jpeg"), name: "Queque para Boda" },
+      { url: require("../assets/images/reposteria-jessy/photos/quequeCumpleaños.jpeg"), name: "Queque para Cumpleaños" },
+      { url: require("../assets/images/reposteria-jessy/photos/quequeNavida.jpeg"), name: "Queque Navideño Pequeño" },
+      { url: require("../assets/images/reposteria-jessy/photos/quequeNavida1.jpeg"), name: "Queque Navideño Grande" },
+      { url: require("../assets/images/reposteria-jessy/photos/quequeNavideño.jpeg"), name: "Queque Navideño Mediano" },
+      { url: require("../assets/images/reposteria-jessy/photos/queques.jpeg"), name: "Queques" },
+      { url: require("../assets/images/reposteria-jessy/photos/QuequesEventos.jpeg"), name: "Mesas para eventos" },
+      { url: require("../assets/images/reposteria-jessy/photos/tortaChilena.JPG"), name: "Torta Chilena" },
+      { url: require("../assets/images/reposteria-jessy/photos/tres_leches.JPG"), name: "Tres Leches" }
     ],
     videos: [
       {
@@ -833,12 +957,12 @@ export const businessesData: Business[] = [
     ],
     location: { lat: 8.891351189758629, lng: -82.7945733260498 },
     contactInfo: {
-      email: "jessicayoselim@gmail.com",
+      email: "jychinchilla88@gmail.com",
       phone: "+506 8794-4995",
-      address: "50 metros este de Agroservicio La Poderosa y 50 metros sur, La Lucha de Sabalito, Puntarenas", 
+      address: "50 metros este de Agroservicio La Poderosa y 50 metros sur, La Lucha de Sabalito, Puntarenas",
     },
     socialMedia: {
-      facebook: "",
+      facebook: "https://www.facebook.com/share/1FwCHxNMAe/",
       whatsapp: "+506 8794-4995"
     }
   }
