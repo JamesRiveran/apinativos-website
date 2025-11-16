@@ -12,7 +12,6 @@ import videoApiG from '../assets/images/api-g/videos/api-g.mp4';
 import videoApiG1 from '../assets/images/api-g/videos/apig1.mp4';
 import videoCafeLaMarcela from '../assets/images/cafe-la-marcela/videos/cafe-la-marcela.mp4';
 import videoFincaEcologicaDonJuan from '../assets/images/finca-ecologica-don-juan/videos/finca-ecologica-don-juan.mp4';
-import videoFincaZamoraFallas from '../assets/images/finca-zamoraFallas/videos/finca-zamoraFallas.mp4';
 import videoReposteriaJessy from '../assets/images/reposteria-jessy/videos/reposteria-jessy.mp4';
 export const businessesData: Business[] = [
   {
@@ -751,7 +750,7 @@ export const businessesData: Business[] = [
         id: "queque-borracho",
         name: "Queque Borracho",
         description: "Vainilla relleno de dulce de leche, húmedo en tres leches y cargado de licor.",
-        image: placeholder,
+        image: require("../assets/images/reposteria-jessy/products/quequeBorracho.jpeg"),
         price: "Varía según decoración"
       },
       {
@@ -786,14 +785,14 @@ export const businessesData: Business[] = [
         id: "carlota-fresa",
         name: "Carlota de Fresa",
         description: "2 bizcochos delgados húmedos en tres leches, relleno grueso de crema de fresa con trocitos de fresa y galleta.",
-        image: placeholder,
+        image: require("../assets/images/reposteria-jessy/products/CarlotaFresa.jpeg"),
         price: "Varía según decoración"
       },
       {
         id: "carlota-frutas",
         name: "Carlota de Frutas",
         description: "2 bizcochos delgados húmedos en tres leches, relleno grueso de crema de frutas con trocitos de frutas combinadas y galleta.",
-        image: placeholder,
+        image: require("../assets/images/reposteria-jessy/products/CarlotaFrutas.jpeg"),
         price: "Varía según decoración"
       },
       {
@@ -807,7 +806,7 @@ export const businessesData: Business[] = [
         id: "torta-napolitana",
         name: "Torta Napolitana",
         description: "Panes húmedos en chocolate, vainilla y fresa. Crema de fresa, chocolate y vainilla.",
-        image: placeholder,
+        image: require("../assets/images/reposteria-jessy/products/Napolitana.jpeg"),
         price: "Varía según decoración"
       },
       {
@@ -842,14 +841,14 @@ export const businessesData: Business[] = [
         id: "torta-baileys",
         name: "Torta Baileys",
         description: "Pan lustre con relleno a base de Baileys.",
-        image: placeholder,
+        image: require("../assets/images/reposteria-jessy/products/tortaBaileys.jpeg"),
         price: "Varía según decoración"
       },
       {
         id: "torta-whisky",
         name: "Torta Whisky",
         description: "Base delgada de pan con crema tipo irlandesa.",
-        image: placeholder,
+        image: require("../assets/images/reposteria-jessy/products/tortaWhiskey.jpeg"),
         price: "Varía según decoración"
       },
       {
@@ -884,7 +883,7 @@ export const businessesData: Business[] = [
         id: "torta-opera",
         name: "Torta Ópera",
         description: "Tres bizcochos con rellenos de café, moka y chocolate. Húmedo con vainilla, licor de café y chocolate.",
-        image: placeholder,
+        image: require("../assets/images/reposteria-jessy/products/tortaOpera.jpeg"),
         price: "Varía según decoración"
       },
       {

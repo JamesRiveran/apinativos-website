@@ -3,6 +3,7 @@ import { useParams, useLocation } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import { getBusinessById } from "../data/businessesData";
+import CartSidebar from "../components/ui/CartSidebar";
 
 interface BusinessLayoutProps {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ const BusinessLayout: React.FC<BusinessLayoutProps> = ({ children }) => {
   const { businessId } = useParams<{ businessId: string }>();
   const location = useLocation();
 
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [businessId, location.pathname]);
@@ -40,6 +41,7 @@ const BusinessLayout: React.FC<BusinessLayoutProps> = ({ children }) => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow pt-16">{children}</main>
+      <CartSidebar />
       <Footer />
     </div>
   );

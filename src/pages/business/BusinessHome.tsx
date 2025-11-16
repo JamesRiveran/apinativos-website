@@ -10,12 +10,12 @@ import { Button } from '../../components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card';
 import { getBusinessById } from '../../data/businessesData';
 import { createBlurDataURL } from '../../lib/imageUtils';
-import { MapPin, Phone, Mail, Play } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import Map from '../../components/common/Map';
-import placeholderImage from '../../assets/images/finca-ecologica-don-juan/logo.jpg'; 
+import placeholderImage from '../../assets/images/finca-ecologica-don-juan/logo.jpg';
 import { FadeInUp, StaggerContainer, StaggerItem } from '../../components/animations/AnimationComponents';
 import { GradientOrb } from '../../components/animations/BackgroundEffects';
-import { Video } from '../../types'; 
+import { Video } from '../../types';
 
 
 function getRandomSample<T>(arr: T[], n: number): T[] {
@@ -36,7 +36,7 @@ const AutoCarousel: React.FC<{ images: { url: string; name?: string }[] }> = ({ 
     if (roundImages.length <= 1) return;
     timeoutRef.current = setTimeout(() => {
       if (current === roundImages.length - 1) {
-        
+
         setRoundImages(getRandomSample(images, Math.min(8, images.length)));
         setCurrent(0);
       } else {
@@ -48,7 +48,7 @@ const AutoCarousel: React.FC<{ images: { url: string; name?: string }[] }> = ({ 
     };
   }, [current, roundImages, images]);
 
-  
+
   useEffect(() => {
     setRoundImages(getRandomSample(images, Math.min(8, images.length)));
     setCurrent(0);
@@ -61,7 +61,7 @@ const AutoCarousel: React.FC<{ images: { url: string; name?: string }[] }> = ({ 
 const BusinessHome: React.FC = () => {
   const { businessId } = useParams<{ businessId: string }>();
   const business = getBusinessById(businessId || '');
-  
+
   type ProductType = typeof business extends { products: Array<infer P> } ? P : any;
   const [modalProduct, setModalProduct] = useState<null | ProductType>(null);
   const [modalVideo, setModalVideo] = useState<Video | null>(null);
@@ -88,7 +88,7 @@ const BusinessHome: React.FC = () => {
 
   return (
     <BusinessLayout>
-      <Hero 
+      <Hero
         title={business.name}
         subtitle={business.shortDescription}
         backgroundImage={business.backgroundImage || placeholderImage}
@@ -96,7 +96,7 @@ const BusinessHome: React.FC = () => {
       />
 
 
-  <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
 
         <GradientOrb className="absolute top-10 right-10 -z-10" size="lg" color="gray" />
         <div className="container max-w-4xl mx-auto px-4">
@@ -252,7 +252,7 @@ const BusinessHome: React.FC = () => {
             )}
           </Modal>
         </section>
-          )}
+      )}
 
       <section className="py-16 bg-white relative overflow-hidden">
         <GradientOrb className="absolute top-20 right-20 -z-10" size="sm" color="gray" />
