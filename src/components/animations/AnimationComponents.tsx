@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from '../../hooks/useInView';
 
 interface FadeInUpProps {
   children: React.ReactNode;
@@ -9,24 +8,20 @@ interface FadeInUpProps {
   className?: string;
 }
 
-export const FadeInUp: React.FC<FadeInUpProps> = ({ 
-  children, 
-  delay = 0, 
+export const FadeInUp: React.FC<FadeInUpProps> = ({
+  children,
+  delay = 0,
   duration = 0.6,
   className = ""
 }) => {
-  const { ref, hasBeenInView } = useInView({ threshold: 0.1 });
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 60 }}
-      animate={hasBeenInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{ 
-        duration,
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }}
+      initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      whileInView={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
       {children}
@@ -41,24 +36,20 @@ interface FadeInLeftProps {
   className?: string;
 }
 
-export const FadeInLeft: React.FC<FadeInLeftProps> = ({ 
-  children, 
-  delay = 0, 
+export const FadeInLeft: React.FC<FadeInLeftProps> = ({
+  children,
+  delay = 0,
   duration = 0.6,
   className = ""
 }) => {
-  const { ref, hasBeenInView } = useInView({ threshold: 0.1 });
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x: -60 }}
-      animate={hasBeenInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
-      transition={{ 
-        duration,
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }}
+      initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
+      whileInView={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
       {children}
@@ -73,24 +64,20 @@ interface FadeInRightProps {
   className?: string;
 }
 
-export const FadeInRight: React.FC<FadeInRightProps> = ({ 
-  children, 
-  delay = 0, 
+export const FadeInRight: React.FC<FadeInRightProps> = ({
+  children,
+  delay = 0,
   duration = 0.6,
   className = ""
 }) => {
-  const { ref, hasBeenInView } = useInView({ threshold: 0.1 });
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, x: 60 }}
-      animate={hasBeenInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
-      transition={{ 
-        duration,
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }}
+      initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+      whileInView={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
       {children}
@@ -105,24 +92,20 @@ interface ScaleInProps {
   className?: string;
 }
 
-export const ScaleIn: React.FC<ScaleInProps> = ({ 
-  children, 
-  delay = 0, 
+export const ScaleIn: React.FC<ScaleInProps> = ({
+  children,
+  delay = 0,
   duration = 0.6,
   className = ""
 }) => {
-  const { ref, hasBeenInView } = useInView({ threshold: 0.1 });
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={hasBeenInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-      transition={{ 
-        duration,
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }}
+      initial={prefersReduced ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.92 }}
+      whileInView={prefersReduced ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
       {children}
@@ -136,18 +119,18 @@ interface StaggerContainerProps {
   staggerDelay?: number;
 }
 
-export const StaggerContainer: React.FC<StaggerContainerProps> = ({ 
-  children, 
+export const StaggerContainer: React.FC<StaggerContainerProps> = ({
+  children,
   className = "",
-  staggerDelay = 0.1
+  staggerDelay = 0.08
 }) => {
-  const { ref, hasBeenInView } = useInView({ threshold: 0.1 });
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
     <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={hasBeenInView ? "visible" : "hidden"}
+      initial={prefersReduced ? 'visible' : 'hidden'}
+      whileInView={'visible'}
+      viewport={{ once: true, amount: 0.12 }}
       variants={{
         hidden: {},
         visible: {
