@@ -55,12 +55,12 @@ const CartSidebar: React.FC = () => {
                     <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
                     <aside className="relative ml-auto w-full sm:w-96 md:w-[420px] bg-white shadow-xl p-4 overflow-auto">
                         <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-lg font-bold">Tu carrito</h3>
+                            <h3 className="text-lg font-bold">{business ? `Carrito de ${business.name}` : 'Tu carrito'}</h3>
                             <button className="text-sm text-gray-500" onClick={() => setOpen(false)}>Cerrar</button>
                         </div>
 
                         {items.length === 0 ? (
-                            <div className="text-center text-gray-500 py-8">No hay productos en el carrito</div>
+                            <div className="text-center text-gray-500 py-8">{business ? `No hay productos en el carrito de ${business.name}` : 'No hay productos en el carrito'}</div>
                         ) : (
                             <div className="space-y-4">
                                 {items.map((it) => (
