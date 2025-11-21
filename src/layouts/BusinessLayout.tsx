@@ -4,6 +4,7 @@ import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import { getBusinessById } from "../data/businessesData";
 import CartSidebar from "../components/ui/CartSidebar";
+import { useCart } from "../context/CartContext";
 
 interface BusinessLayoutProps {
   children: React.ReactNode;
@@ -19,6 +20,13 @@ const BusinessLayout: React.FC<BusinessLayoutProps> = ({ children }) => {
   }, [businessId, location.pathname]);
 
   const business = getBusinessById(businessId || "");
+
+  const { setActiveBusiness } = useCart();
+
+  useEffect(() => {
+    setActiveBusiness(businessId || null);
+    return () => setActiveBusiness(null);
+  }, [businessId, setActiveBusiness]);
 
   if (!business) {
     return (
