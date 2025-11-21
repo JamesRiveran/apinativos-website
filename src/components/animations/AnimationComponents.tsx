@@ -19,8 +19,7 @@ export const FadeInUp: React.FC<FadeInUpProps> = ({
   return (
     <motion.div
       initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      whileInView={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
+      animate={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
       transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
@@ -47,8 +46,7 @@ export const FadeInLeft: React.FC<FadeInLeftProps> = ({
   return (
     <motion.div
       initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-      whileInView={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
+      animate={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
       transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
@@ -75,8 +73,7 @@ export const FadeInRight: React.FC<FadeInRightProps> = ({
   return (
     <motion.div
       initial={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-      whileInView={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
+      animate={prefersReduced ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
       transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
@@ -103,8 +100,7 @@ export const ScaleIn: React.FC<ScaleInProps> = ({
   return (
     <motion.div
       initial={prefersReduced ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.92 }}
-      whileInView={prefersReduced ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.12 }}
+      animate={prefersReduced ? { opacity: 1, scale: 1 } : { opacity: 1, scale: 1 }}
       transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
@@ -129,8 +125,7 @@ export const StaggerContainer: React.FC<StaggerContainerProps> = ({
   return (
     <motion.div
       initial={prefersReduced ? 'visible' : 'hidden'}
-      whileInView={'visible'}
-      viewport={{ once: true, amount: 0.12 }}
+      animate={'visible'}
       variants={{
         hidden: {},
         visible: {

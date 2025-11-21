@@ -6,7 +6,7 @@ import logoCafeLaMarcela from '../assets/images/cafe-la-marcela/cafe_la_marcela_
 import logoFincaZamora from '../assets/images/finca-zamoraFallas/logo.jpg';
 import logoApiG from '../assets/images/api-g/logo.jpg';
 import logoJessy from '../assets/images/reposteria-jessy/logo_jessy.png';
-
+import abeja from '../assets/images/api-g/products/Goteros_mariolita.jpeg';
 import videoApiZaid from '../assets/images/api-zaid/videos/api-zaid.mp4';
 import videoApiG from '../assets/images/api-g/videos/api-g.mp4';
 import videoApiG1 from '../assets/images/api-g/videos/apig1.mp4';
@@ -378,7 +378,7 @@ export const businessesData: Business[] = [
         id: "goteros-mariolita-40g",
         name: "Goteros Mariolita 40g",
         description: "Goteros de mariolita, presentación 40 g.",
-        image: require("../assets/images/api-g/products/Goteros_mariolita.jpeg"),
+        image: abeja,
         price: "₡7.000"
       },
       {
@@ -785,7 +785,7 @@ export const businessesData: Business[] = [
         id: "carlota-fresa",
         name: "Carlota de Fresa",
         description: "2 bizcochos delgados húmedos en tres leches, relleno grueso de crema de fresa con trocitos de fresa y galleta.",
-        image: require("../assets/images/reposteria-jessy/products/CarlotaFresa.jpeg"),
+        image: require("../assets/images/reposteria-jessy/products/CarlotaFresa.webp"),
         price: "Varía según decoración"
       },
       {

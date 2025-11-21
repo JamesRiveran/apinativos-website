@@ -86,7 +86,7 @@ const VirtualizedGrid: React.FC<VirtualizedGridProps> = ({ products, renderProdu
 
   const colWidth = Math.floor((width - gap * (columns - 1)) / columns);
   const rowCount = Math.ceil(productsArr.length / columns);
-  const rowHeight = 440;
+  const rowHeight = 380;
 
   if (hasVirtual && listRef.current) {
     const ListComp = listRef.current as any;
@@ -145,16 +145,16 @@ const BusinessProductsCatalog: React.FC = () => {
   const ProductCardInnerInner: React.FC<{ product: ProductType }> = ({ product }) => {
     return (
       <Card
-        className="group overflow-hidden border border-gray-200 hover:border-primary/30 transition-all hover:shadow-xl hover:-translate-y-2 duration-300 cursor-pointer"
+        className="group overflow-hidden border border-gray-200 hover:border-primary/30 transition-all hover:shadow-xl hover:-translate-y-1 duration-300 cursor-pointer"
         onClick={() => { setModalProduct(product); setModalQty(1); }}
       >
-        <div className="relative aspect-[4/3] sm:aspect-square overflow-hidden bg-gray-50">
+        <div className="relative aspect-square overflow-hidden bg-gray-50">
           <LazyImage
             src={product.image}
             alt={product.name}
             width="100%"
             height="100%"
-            className="w-full h-full transition-transform duration-300 group-hover:scale-110 object-cover"
+            className="w-full h-full transition-transform duration-300 group-hover:scale-105 object-contain sm:object-cover"
             placeholder={createBlurDataURL(16, 16)}
             fallbackSrc={logo}
             objectFit="cover"
@@ -183,7 +183,7 @@ const BusinessProductsCatalog: React.FC = () => {
               {product.description}
             </p>
           </div>
-          <div className="mt-4 flex items-center justify-end">
+          <div className="mt-4 flex items-center justify-between">
             <button type="button"
               onClick={async (e) => {
                 e.stopPropagation();
@@ -346,12 +346,7 @@ const BusinessProductsCatalog: React.FC = () => {
                         </svg>
                         Agregar al carrito
                       </motion.button>
-                      <button type="button"
-                        className="px-5 py-2 rounded-lg border border-primary text-primary font-semibold bg-white hover:bg-primary hover:text-white transition-colors shadow"
-                        onClick={() => { setModalProduct(null); setModalQty(1); }}
-                      >
-                        Cerrar
-                      </button>
+                      {/* Modal can be closed via the X button or Escape key; remove redundant 'Cerrar' button */}
                     </div>
                   </div>
                 )}
