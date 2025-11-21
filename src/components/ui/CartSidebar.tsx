@@ -53,7 +53,7 @@ const CartSidebar: React.FC = () => {
             {open && (
                 <div className="fixed inset-0 z-50 flex">
                     <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-                    <aside className="relative ml-auto w-full sm:w-96 bg-white shadow-xl p-4 overflow-auto">
+                    <aside className="relative ml-auto w-full sm:w-96 md:w-[420px] bg-white shadow-xl p-4 overflow-auto">
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-lg font-bold">Tu carrito</h3>
                             <button className="text-sm text-gray-500" onClick={() => setOpen(false)}>Cerrar</button>
@@ -65,17 +65,16 @@ const CartSidebar: React.FC = () => {
                             <div className="space-y-4">
                                 {items.map((it) => (
                                     <div key={it.product.id} className="flex items-start gap-3 border-b pb-3">
-                                        <img src={it.product.image as any} alt={it.product.name} className="w-16 h-16 object-cover rounded-md" />
+                                        <img src={it.product.image as any} alt={it.product.name} className="w-20 h-20 object-cover rounded-md" />
                                         <div className="flex-1">
                                             <div className="flex items-center justify-between">
-                                                <div className="font-semibold">{it.product.name}</div>
-                                                <button className="text-sm text-red-500" onClick={() => removeItem(it.product.id)}>Eliminar</button>
+                                                <div className="font-semibold text-sm sm:text-base">{it.product.name}</div>
                                             </div>
                                             <div className="text-sm text-gray-600">{it.product.price}</div>
                                             <div className="mt-2 flex items-center gap-2">
-                                                <button className="px-2 py-1 border rounded" onClick={() => updateQty(it.product.id, it.qty - 1)}>-</button>
+                                                <button className="px-2 py-1 border rounded" onClick={() => updateQty(it.product.id, it.qty - 1)} aria-label="Disminuir">-</button>
                                                 <div className="px-3 py-1 border rounded">{it.qty}</div>
-                                                <button className="px-2 py-1 border rounded" onClick={() => updateQty(it.product.id, it.qty + 1)}>+</button>
+                                                <button className="px-2 py-1 border rounded" onClick={() => updateQty(it.product.id, it.qty + 1)} aria-label="Aumentar">+</button>
                                             </div>
                                         </div>
                                     </div>

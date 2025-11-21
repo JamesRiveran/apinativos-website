@@ -40,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center"
+          className="fixed inset-0 z-[9999] flex items-center justify-center"
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -55,15 +55,31 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
             exit={{ opacity: 0 }}
           />
 
+          {/* Close button placed outside the rounded modal box to avoid clipping */}
+          <button
+            aria-label="Cerrar modal"
+            onClick={onClose}
+            className="absolute top-6 right-6 z-[10001] inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/90 text-gray-700 shadow hover:bg-white transition"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M18 6L6 18M6 6l12 12" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
           <motion.div
-            className="relative z-40 w-full max-h-[90vh] overflow-auto px-4"
+            className="relative z-[10000] w-full max-h-[90vh] overflow-auto px-4"
             variants={contentVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
             transition={{ duration: 0.25 }}
+            onClick={onClose}
           >
-            {children}
+            <div className="relative">
+              <div onClick={(e) => e.stopPropagation()}>
+                {children}
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       )}

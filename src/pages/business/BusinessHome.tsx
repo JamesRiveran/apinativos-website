@@ -246,7 +246,7 @@ const BusinessHome: React.FC = () => {
                   className="mt-2 px-6 py-2 rounded-lg border border-primary text-primary font-semibold bg-white hover:bg-primary hover:text-white transition-colors self-center shadow"
                   onClick={() => setModalProduct(null)}
                 >
-                  Cerrar
+                  {/* Keep for keyboard users if needed, but will hide visually since X exists. */}
                 </button>
               </div>
             )}
